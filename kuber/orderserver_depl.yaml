@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: orderserver
+spec: 
+  replicas: 1
+  selector: 
+    matchLabels: 
+      app: orderserver
+  template: 
+    metadata: 
+      labels: 
+        app: orderserver
+    spec: 
+      containers: 
+        - 
+          image: "harrisson/orderserver:latest"
+          name: orderserver
+          ports: 
+            - 
+              containerPort: 8087
+              name: orderserver
+	    -
+	      containerPort: 9087
+              name: orderserver-grpc
+        

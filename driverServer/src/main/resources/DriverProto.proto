@@ -1,0 +1,52 @@
+syntax = "proto3";
+
+
+option java_package = "com.example.demo.Api.Grpc";
+
+service DriverService {
+  rpc add (DriverAddRequest) returns (DriverResponse);
+  rpc report(ListCategoryRequest) returns (ListCategoryResponse);
+  rpc update(DriverUpdateRequest) returns (DriverResponse);
+  rpc delete(DriverDeleteRequest) returns (DriverDeleteResponse);
+}
+
+message ListCategoryRequest {
+  string mappingModule = 1;
+  string id=2;
+  string  status=3;
+}
+
+message ListCategoryResponse {
+  repeated DriverResponse workers = 1;
+}
+
+
+message DriverAddRequest {
+  string name = 1;
+  string category = 2;
+  double salary = 3 ;
+  double mileage = 4;
+}
+
+message DriverUpdateRequest {
+  string id = 1;
+  double distance = 2;
+}
+
+message DriverDeleteRequest {
+  string name = 1;
+  string status = 2;
+  string module = 3;
+}
+
+message DriverResponse {
+  string driverId = 1;
+  string name = 2;
+  string status = 3;
+}
+
+message DriverDeleteResponse {
+  bool status = 1;
+
+}
+

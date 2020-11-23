@@ -1,0 +1,25 @@
+apiVersion: apps/v1kind: Deployment
+metadata: 
+  name: server
+spec: 
+  replicas: 1
+  selector: 
+    matchLabels: 
+      app: server
+  template: 
+    metadata: 
+      labels: 
+        app: server
+    spec: 
+      containers: 
+        - 
+          image: "harrisson/server:latest"
+          name: server
+          ports: 
+            - 
+              containerPort: 8082
+              name: server
+	    -
+	      containerPort: 9082
+              name: server-grpc
+          

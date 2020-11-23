@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+
+option java_package = "com.example.demo.Api.Grpc";
+
+
+message CreateRequest{
+  string name = 1;
+  double cash = 2;
+  bool isVip = 3;
+}
+
+message ReportRequest{
+  string module = 1;
+  string id = 2;
+}
+
+message ClientResponse{
+  string name = 1;
+  double cash = 2;
+  bool isVip = 3;
+}
+
+message ClientListResponse{
+  repeated ClientResponse clients = 1;
+}
+
+service ClientsController{
+  rpc create (CreateRequest) returns (ClientResponse);
+  rpc report(ReportRequest) returns (ClientListResponse);
+}

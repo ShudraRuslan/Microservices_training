@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: driverserver
+spec: 
+  replicas: 1
+  selector: 
+    matchLabels: 
+      app: driverserver
+  template: 
+    metadata: 
+      labels: 
+        app: driverserver
+    spec: 
+      containers: 
+        - 
+          image: "harrisson/driverserver:latest"
+          name: driverserver
+          ports: 
+            - 
+              containerPort: 8086
+              name: driverserver
+            -
+	      containerPort: 9086
+              name: driverserver-grpc
+        

@@ -1,0 +1,83 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: server-int-connection
+spec:
+  type: ClusterIP
+  ports:
+    - port: 8082
+      name: server
+    - port: 9082
+      name: server-grpc
+  selector:
+    app: server
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: clientserver
+spec:
+  type: ClusterIP
+  ports:
+    - port: 8085
+      name: clientserver
+    - port: 9085
+      name: clientserver-grpc
+  selector:
+    app: clientserver
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: driverserver
+spec:
+  type: ClusterIP
+  ports:
+    - port: 8086
+      name: driverserver
+    - port: 9086
+      name: driverserver-grpc
+  selector:
+    app: driverserver
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: carserver
+spec:
+  type: ClusterIP
+  ports:
+    - port: 8083
+      name: carserver
+    - port: 9083
+      name: carserver-grpc
+  selector:
+    app: carserver
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: cashierserver
+spec:
+  type: ClusterIP
+  ports:
+    - port: 8084
+      name: cashierserver
+    - port: 9084
+      name: cashierserver-grpc
+  selector:
+    app: cashierserver
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: orderserver
+spec:
+  type: ClusterIP
+  ports:
+    - port: 8087
+      name: orderserver
+    - port: 9087
+      name: ordererver-grpc
+  selector:
+    app: orderserver

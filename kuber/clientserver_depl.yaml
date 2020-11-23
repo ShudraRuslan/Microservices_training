@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: clientserver
+spec: 
+  replicas: 1
+  selector: 
+    matchLabels: 
+      app: clientserver
+  template: 
+    metadata: 
+      labels: 
+        app: clientserver
+    spec: 
+      containers: 
+        - 
+          image: "harrisson/clientserver:latest"
+          name: clientserver
+          ports: 
+            - 
+              containerPort: 8085
+              name: clientserver
+            -
+	      containerPort: 9085
+              name: clientserver-grpc

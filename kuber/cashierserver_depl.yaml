@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: cashierserver
+spec: 
+  replicas: 1
+  selector: 
+    matchLabels: 
+      app: cashierserver
+  template: 
+    metadata: 
+      labels: 
+        app: cashierserver
+    spec: 
+      containers: 
+        - 
+          image: "harrisson/cashierserver:latest"
+          name: cashierserver
+          ports: 
+            - 
+              containerPort: 8084
+              name: cashierserver
+            -
+	      containerPort: 9084
+              name: cashierserver-grpc

@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+
+option java_package = "com.example.demo.Api.GRPC";
+
+message CreateRequest{
+  int32 amountOfPassengers = 1;
+  double distance = 2;
+  string clientId = 3;
+}
+
+message CompleteRequest{
+  string id=1;
+}
+message ReportRequest{
+string id =1;
+}
+
+message OrderResponse{
+  string orderId=1;
+  int32 amountOfPassengers=2;
+  double distance=3;
+  string clientId=4;
+  string driverId=5;
+  string carId=6;
+  string status=7;
+}
+
+
+
+service OrderService{
+  rpc create(CreateRequest) returns (OrderResponse);
+  rpc complete(CompleteRequest) returns (OrderResponse);
+  rpc report(ReportRequest) returns (OrderResponse);
+}
+

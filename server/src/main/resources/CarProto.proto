@@ -1,0 +1,52 @@
+syntax = "proto3";
+
+option java_package = "com.example.demo.Api.Grpc";
+
+service CarService {
+  rpc add (CarAddRequest) returns (CarsResponse);
+  rpc report(ListCategoryRequest) returns (ListCategoryResponse);
+  rpc update(CarUpdateRequest) returns (CarsResponse);
+  rpc delete(CarDeleteRequest) returns (CarsDeleteResponse);
+}
+
+message ListCategoryRequest {
+  string mappingModule = 1;
+  string id=2;
+  string  status=3;
+}
+
+message ListCategoryResponse {
+  repeated CarsResponse workers = 1;
+}
+
+
+message CarAddRequest {
+  string name = 1;
+  double enginePower = 2;
+  int32 capacity = 3;
+  double fuelConsumption = 4;
+  double mileage = 5;
+}
+
+message CarUpdateRequest {
+  string id = 1;
+  double distance = 2;
+}
+
+message CarDeleteRequest {
+  string name = 1;
+  string status = 2;
+  string module = 3;
+}
+
+message CarsResponse {
+  string carId = 1;
+  string name = 2;
+  string status = 3;
+}
+
+message CarsDeleteResponse {
+  bool status = 1;
+
+}
+

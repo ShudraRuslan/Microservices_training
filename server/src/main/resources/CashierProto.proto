@@ -1,0 +1,52 @@
+syntax = "proto3";
+
+
+option java_package = "com.example.demo.Api.Grpc";
+
+
+message CreateRequest{
+  string name = 1;
+}
+
+message CashierResponse{
+  string id = 1;
+  string name = 2;
+  bool isOpen = 3;
+  double bookingCash = 4;
+  double carServiceCash = 5;
+  double driverSalaryCash = 6;
+  double fuelCash = 7;
+  double balance = 8;
+
+}
+
+message ReportRequest{
+string id=1;
+}
+
+message CurrentCashRequest{
+  double distance = 1;
+  int32 amountOfPassengers = 2;
+  bool isVip = 3;
+}
+
+message CurrentCashResponse{
+  double currentCash = 1;
+}
+
+message UpdateRequest{
+  double distance = 1;
+  double carFuelConsumption = 2;
+  int32 amountOfPassengers = 3;
+  double driverSalary = 4;
+  bool carNeedsService = 5;
+  bool isVip = 6;
+}
+
+service CashierService {
+  rpc create (CreateRequest) returns (CashierResponse);
+  rpc report(ReportRequest) returns (CashierResponse);
+  rpc update(UpdateRequest) returns (CashierResponse);
+  rpc currentCash(CurrentCashRequest) returns (CurrentCashResponse);
+}
+
