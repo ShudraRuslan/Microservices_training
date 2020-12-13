@@ -15,7 +15,7 @@ public class Driver {
 
     }
 
-    public Driver(String name, Category category , double salary, double mileage) {
+    public Driver(String name, Category category, double salary, double mileage) {
         this.driverId = UUID.randomUUID();
         this.name = name;
         this.category = category;

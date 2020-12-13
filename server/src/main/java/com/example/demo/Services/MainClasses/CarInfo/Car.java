@@ -30,48 +30,48 @@ public class Car {
         return enginePower;
     }
 
-    public double getFuelConsumption() {
-        return fuelConsumption;
-    }
-
-    public int getCapacity() {
-        return capacity;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public double getMileage() {
-        return mileage;
-    }
-
-    public CarStatus getStatus() {
-        return status;
-    }
-
-    public void setMileage(double mileage) {
-        this.mileage = mileage;
-    }
-
-    public void setCapacity(int capacity) {
-        this.capacity = capacity;
-    }
-
     public void setEnginePower(double enginePower) {
         this.enginePower = enginePower;
+    }
+
+    public double getFuelConsumption() {
+        return fuelConsumption;
     }
 
     public void setFuelConsumption(double fuelConsumption) {
         this.fuelConsumption = fuelConsumption;
     }
 
-    public void setStatus(CarStatus status) {
-        this.status = status;
+    public int getCapacity() {
+        return capacity;
+    }
+
+    public void setCapacity(int capacity) {
+        this.capacity = capacity;
+    }
+
+    public String getName() {
+        return name;
     }
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public double getMileage() {
+        return mileage;
+    }
+
+    public void setMileage(double mileage) {
+        this.mileage = mileage;
+    }
+
+    public CarStatus getStatus() {
+        return status;
+    }
+
+    public void setStatus(CarStatus status) {
+        this.status = status;
     }
 
     public UUID getCarID() {

@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.UUID;
 
 @RestController
@@ -30,7 +31,7 @@ public class OrderRestController {
 
     @PutMapping
     public ResponseEntity<Orders> complete(@RequestParam UUID orderId) {
-        return ResponseEntity.ok(orderService.processTheOrder(orderId));
+        return ResponseEntity.ok(Objects.requireNonNull(orderService.processTheOrder(orderId)));
     }
 
     @GetMapping

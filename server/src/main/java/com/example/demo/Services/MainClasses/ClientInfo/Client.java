@@ -12,6 +12,12 @@ public class Client {
     public Client() {
     }
 
+    public Client(String name, double cash, boolean isVip) {
+        this.name = name;
+        this.cash = cash;
+        this.isVip = isVip;
+    }
+
     public UUID getClientId() {
         return clientId;
     }
@@ -20,38 +26,29 @@ public class Client {
         this.clientId = clientId;
     }
 
-    public Client(String name, double cash, boolean isVip) {
-        this.name = name;
-        this.cash = cash;
-        this.isVip = isVip;
+    public String getName() {
+        return name;
     }
 
     public void setName(String name) {
         this.name = name;
     }
 
-    public void setCash(double cash) {
-        this.cash = cash;
-    }
-
-    public void setVip(boolean vip) {
-        isVip = vip;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-
     public double getCash() {
         return cash;
     }
 
+    public void setCash(double cash) {
+        this.cash = cash;
+    }
 
     public boolean isVip() {
         return isVip;
     }
 
+    public void setVip(boolean vip) {
+        isVip = vip;
+    }
 
     @Override
     public String toString() {

@@ -40,12 +40,12 @@ public class Cashier {
         this.name = name;
     }
 
-    public void setOpen(boolean open) {
-        isOpen = open;
-    }
-
     public boolean isOpen() {
         return isOpen;
+    }
+
+    public void setOpen(boolean open) {
+        isOpen = open;
     }
 
     public void setOpen() {
@@ -56,12 +56,24 @@ public class Cashier {
         return bookingCash;
     }
 
+    public void setBookingCash(double cash) {
+        bookingCash = cash;
+    }
+
     public double getCarServiceCash() {
         return carServiceCash;
     }
 
+    public void setCarServiceCash(double cash) {
+        carServiceCash = cash;
+    }
+
     public double getDriverSalaryCash() {
         return driverSalaryCash;
+    }
+
+    public void setDriverSalaryCash(double cash) {
+        driverSalaryCash = cash;
     }
 
     public double getBalance() {
@@ -74,18 +86,6 @@ public class Cashier {
 
     public double getFuelCash() {
         return fuelCash;
-    }
-
-    public void setBookingCash(double cash) {
-        bookingCash = cash;
-    }
-
-    public void setCarServiceCash(double cash) {
-        carServiceCash = cash;
-    }
-
-    public void setDriverSalaryCash(double cash) {
-        driverSalaryCash = cash;
     }
 
     public void setFuelCash(double cash) {

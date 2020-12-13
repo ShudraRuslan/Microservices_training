@@ -10,6 +10,7 @@ import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.UUID;
 
 @RestController
@@ -27,7 +28,7 @@ public class ClientRestController {
                 queryParam("cash", cash).
                 queryParam("isVip", isVip);
         HttpEntity<Client> response = template.exchange(builder.toUriString(), HttpMethod.POST, null, Client.class);
-        return ResponseEntity.ok(response.getBody());
+        return ResponseEntity.ok(Objects.requireNonNull(response.getBody()));
     }
 
     @GetMapping
@@ -40,7 +41,7 @@ public class ClientRestController {
         HttpEntity<List<Client>> response = template.exchange(builder.toUriString(), HttpMethod.GET, null,
                 new ParameterizedTypeReference<List<Client>>() {
                 });
-        return ResponseEntity.ok(response.getBody());
+        return ResponseEntity.ok(Objects.requireNonNull(response.getBody()));
     }
 
 

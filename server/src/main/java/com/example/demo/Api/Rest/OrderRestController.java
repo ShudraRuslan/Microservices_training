@@ -17,6 +17,7 @@ import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.UUID;
 
 @RestController
@@ -216,7 +217,7 @@ public class OrderRestController {
                 queryParam("distance", distance).
                 queryParam("clientId", clientId);
         HttpEntity<Order> orderResponse = template.exchange(builder.toUriString(), HttpMethod.POST, null, Order.class);
-        return ResponseEntity.ok(orderResponse.getBody());
+        return ResponseEntity.ok(Objects.requireNonNull(orderResponse.getBody()));
     }
 
     @PutMapping
@@ -236,7 +237,7 @@ public class OrderRestController {
                 queryParam("orderId", order.getOrderID());
         HttpEntity<Order> response = template.exchange(builder.toUriString(), HttpMethod.PUT, null, Order.class);
         order = response.getBody();
-        Client client = getOrderClient(order.getClientId());
+        Client client = getOrderClient(Objects.requireNonNull(order).getClientId());
         checkClientsPayAbility(order, order.getDistance(), order.getAmountOfPassengers(), client.isVip());
         updateInformation(order);
 

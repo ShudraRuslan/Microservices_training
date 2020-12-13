@@ -12,6 +12,7 @@ import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.UUID;
 
 @RestController
@@ -31,7 +32,7 @@ public class PersonnelRestController {
                 queryParam("salary", salary).
                 queryParam("mileage", mileage);
         HttpEntity<Driver> response = template.exchange(builder.toUriString(), HttpMethod.POST, null, Driver.class);
-        return ResponseEntity.ok(response.getBody());
+        return ResponseEntity.ok(Objects.requireNonNull(response.getBody()));
     }
 
 
@@ -47,7 +48,7 @@ public class PersonnelRestController {
         HttpEntity<List<Driver>> response = template.exchange(builder.toUriString(), HttpMethod.GET, null,
                 new ParameterizedTypeReference<List<Driver>>() {
                 });
-        return ResponseEntity.ok(response.getBody());
+        return ResponseEntity.ok(Objects.requireNonNull(response.getBody()));
     }
 
 
@@ -60,7 +61,7 @@ public class PersonnelRestController {
                 queryParam("status", status).
                 queryParam("module", module);
         HttpEntity<Object> response = template.exchange(builder.toUriString(), HttpMethod.DELETE, null, Object.class);
-        return ResponseEntity.ok(response.getBody());
+        return ResponseEntity.ok(Objects.requireNonNull(response.getBody()));
 
     }
 }

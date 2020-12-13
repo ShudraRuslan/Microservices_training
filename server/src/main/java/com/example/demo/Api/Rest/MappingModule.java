@@ -6,5 +6,5 @@ public enum MappingModule {
     ByName,
     vip,
     currentBookingCash,
-    byId;
+    byId
 }

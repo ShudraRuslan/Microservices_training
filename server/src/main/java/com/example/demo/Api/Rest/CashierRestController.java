@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
 
+import java.util.Objects;
+
 @RestController
 @RequestMapping("/cashier")
 public class CashierRestController {
@@ -24,13 +26,13 @@ public class CashierRestController {
         UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(address).
                 queryParam("name", "cash");
         HttpEntity<Cashier> response = template.exchange(builder.toUriString(), HttpMethod.POST, null, Cashier.class);
-        return ResponseEntity.ok(response.getBody());
+        return ResponseEntity.ok(Objects.requireNonNull(response.getBody()));
     }
 
     @GetMapping
     public ResponseEntity<String> report() {
 
         HttpEntity<String> response = template.exchange(address, HttpMethod.GET, null, String.class);
-        return ResponseEntity.ok(response.getBody());
+        return ResponseEntity.ok(Objects.requireNonNull(response.getBody()));
     }
 }

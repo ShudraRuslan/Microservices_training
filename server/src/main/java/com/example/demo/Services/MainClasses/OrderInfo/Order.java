@@ -13,14 +13,6 @@ public final class Order {
     private OrderStatus status;
 
 
-    public UUID getOrderID() {
-        return orderID;
-    }
-
-    public void setOrderID(UUID orderID) {
-        this.orderID = orderID;
-    }
-
     public Order() {
     }
 
@@ -41,6 +33,13 @@ public final class Order {
         this.orderID = orderId;
     }
 
+    public UUID getOrderID() {
+        return orderID;
+    }
+
+    public void setOrderID(UUID orderID) {
+        this.orderID = orderID;
+    }
 
     @Override
     public String toString() {

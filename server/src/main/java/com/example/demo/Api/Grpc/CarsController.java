@@ -7,9 +7,6 @@ import io.grpc.stub.StreamObserver;
 import net.devh.boot.grpc.server.service.GrpcService;
 
 
-
-
-
 @GrpcService
 public class CarsController extends CarServiceGrpc.CarServiceImplBase {
     private final String address = "http://carserver";
@@ -46,7 +43,6 @@ public class CarsController extends CarServiceGrpc.CarServiceImplBase {
         responseObserver.onCompleted();
 
     }
-
 
 
     @Override

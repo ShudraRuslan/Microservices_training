@@ -10,24 +10,24 @@ message CreateRequest{
 }
 
 message CompleteRequest{
-  string id=1;
+  string id = 1;
 }
 message ReportRequest{
-string id =1;
+  string id = 1;
 }
 
 message OrderResponse{
-  string orderId=1;
-  int32 amountOfPassengers=2;
-  double distance=3
-  string clientId=4;
-  string driverId=5;
-  string carId=6;
-  string status=7;
+  string orderId = 1;
+  int32 amountOfPassengers = 2;
+  double distance = 3
+  string clientId = 4;
+  string driverId = 5;
+  string carId = 6;
+  string status = 7;
 }
 
 message OrderListResponse{
-  repeated OrderResponse orders=1;
+  repeated OrderResponse orders = 1;
 }
 
 service OrderService{

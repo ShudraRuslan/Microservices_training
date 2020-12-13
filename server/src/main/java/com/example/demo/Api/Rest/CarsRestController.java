@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
 
+import java.util.Objects;
 import java.util.UUID;
 
 
@@ -33,7 +34,7 @@ public class CarsRestController {
                 queryParam("fuelConsumption", fuelConsumption).
                 queryParam("mileage", mileage);
         HttpEntity<Car> response = template.exchange(builder.toUriString(), HttpMethod.POST, null, Car.class);
-        return ResponseEntity.ok(response.getBody());
+        return ResponseEntity.ok(Objects.requireNonNull(response.getBody()));
     }
 
     @GetMapping
@@ -46,7 +47,7 @@ public class CarsRestController {
                 queryParam("id", id).
                 queryParam("module", module);
         HttpEntity<Object> response = template.exchange(builder.toUriString(), HttpMethod.GET, null, Object.class);
-        return ResponseEntity.ok(response.getBody());
+        return ResponseEntity.ok(Objects.requireNonNull(response.getBody()));
     }
 
 
@@ -59,7 +60,7 @@ public class CarsRestController {
                 queryParam("status", status).
                 queryParam("module", module);
         HttpEntity<Object> response = template.exchange(builder.toUriString(), HttpMethod.DELETE, null, Object.class);
-        return ResponseEntity.ok(response.getBody());
+        return ResponseEntity.ok(Objects.requireNonNull(response.getBody()));
     }
 
 

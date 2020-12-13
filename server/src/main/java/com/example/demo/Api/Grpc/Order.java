@@ -4,3102 +4,3283 @@
 package com.example.demo.Api.Grpc;
 
 public final class Order {
-  private Order() {}
-  public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistryLite registry) {
-  }
+    private static final com.google.protobuf.Descriptors.Descriptor
+            internal_static_CreateRequest_descriptor;
+    private static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internal_static_CreateRequest_fieldAccessorTable;
+    private static final com.google.protobuf.Descriptors.Descriptor
+            internal_static_CompleteRequest_descriptor;
+    private static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internal_static_CompleteRequest_fieldAccessorTable;
+    private static final com.google.protobuf.Descriptors.Descriptor
+            internal_static_ReportRequest_descriptor;
+    private static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internal_static_ReportRequest_fieldAccessorTable;
+    private static final com.google.protobuf.Descriptors.Descriptor
+            internal_static_OrderResponse_descriptor;
+    private static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internal_static_OrderResponse_fieldAccessorTable;
+    private static com.google.protobuf.Descriptors.FileDescriptor
+            descriptor;
 
-  public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistry registry) {
-    registerAllExtensions(
-        (com.google.protobuf.ExtensionRegistryLite) registry);
-  }
-  public interface CreateRequestOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:CreateRequest)
-      com.google.protobuf.MessageOrBuilder {
+    static {
+        java.lang.String[] descriptorData = {
+                "\n\013Order.proto\"O\n\rCreateRequest\022\032\n\022amount" +
+                        "OfPassengers\030\001 \001(\005\022\020\n\010distance\030\002 \001(\001\022\020\n\010" +
+                        "clientId\030\003 \001(\t\"\035\n\017CompleteRequest\022\n\n\002id\030" +
+                        "\001 \001(\t\"\033\n\rReportRequest\022\n\n\002id\030\001 \001(\t\"\221\001\n\rO" +
+                        "rderResponse\022\017\n\007orderId\030\001 \001(\t\022\032\n\022amountO" +
+                        "fPassengers\030\002 \001(\005\022\020\n\010distance\030\003 \001(\001\022\020\n\010c" +
+                        "lientId\030\004 \001(\t\022\020\n\010driverId\030\005 \001(\t\022\r\n\005carId" +
+                        "\030\006 \001(\t\022\016\n\006status\030\007 \001(\t2\220\001\n\014OrderService\022" +
+                        "(\n\006create\022\016.CreateRequest\032\016.OrderRespons" +
+                        "e\022,\n\010complete\022\020.CompleteRequest\032\016.OrderR" +
+                        "esponse\022(\n\006report\022\016.ReportRequest\032\016.Orde" +
+                        "rResponseB\033\n\031com.example.demo.Api.Grpcb\006" +
+                        "proto3"
+        };
+        com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
+                new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
+                    public com.google.protobuf.ExtensionRegistry assignDescriptors(
+                            com.google.protobuf.Descriptors.FileDescriptor root) {
+                        descriptor = root;
+                        return null;
+                    }
+                };
+        com.google.protobuf.Descriptors.FileDescriptor
+                .internalBuildGeneratedFileFrom(descriptorData,
+                        new com.google.protobuf.Descriptors.FileDescriptor[]{
+                        }, assigner);
+        internal_static_CreateRequest_descriptor =
+                getDescriptor().getMessageTypes().get(0);
+        internal_static_CreateRequest_fieldAccessorTable = new
+                com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+                internal_static_CreateRequest_descriptor,
+                new java.lang.String[]{"AmountOfPassengers", "Distance", "ClientId",});
+        internal_static_CompleteRequest_descriptor =
+                getDescriptor().getMessageTypes().get(1);
+        internal_static_CompleteRequest_fieldAccessorTable = new
+                com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+                internal_static_CompleteRequest_descriptor,
+                new java.lang.String[]{"Id",});
+        internal_static_ReportRequest_descriptor =
+                getDescriptor().getMessageTypes().get(2);
+        internal_static_ReportRequest_fieldAccessorTable = new
+                com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+                internal_static_ReportRequest_descriptor,
+                new java.lang.String[]{"Id",});
+        internal_static_OrderResponse_descriptor =
+                getDescriptor().getMessageTypes().get(3);
+        internal_static_OrderResponse_fieldAccessorTable = new
+                com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+                internal_static_OrderResponse_descriptor,
+                new java.lang.String[]{"OrderId", "AmountOfPassengers", "Distance", "ClientId", "DriverId", "CarId", "Status",});
+    }
 
-    /**
-     * <code>int32 amountOfPassengers = 1;</code>
-     */
-    int getAmountOfPassengers();
+    private Order() {
+    }
 
-    /**
-     * <code>double distance = 2;</code>
-     */
-    double getDistance();
+    public static void registerAllExtensions(
+            com.google.protobuf.ExtensionRegistryLite registry) {
+    }
 
-    /**
-     * <code>string clientId = 3;</code>
-     */
-    java.lang.String getClientId();
-    /**
-     * <code>string clientId = 3;</code>
-     */
-    com.google.protobuf.ByteString
+    public static void registerAllExtensions(
+            com.google.protobuf.ExtensionRegistry registry) {
+        registerAllExtensions(
+                (com.google.protobuf.ExtensionRegistryLite) registry);
+    }
+
+    public static com.google.protobuf.Descriptors.FileDescriptor
+    getDescriptor() {
+        return descriptor;
+    }
+    public interface CreateRequestOrBuilder extends
+            // @@protoc_insertion_point(interface_extends:CreateRequest)
+            com.google.protobuf.MessageOrBuilder {
+
+        /**
+         * <code>int32 amountOfPassengers = 1;</code>
+         */
+        int getAmountOfPassengers();
+
+        /**
+         * <code>double distance = 2;</code>
+         */
+        double getDistance();
+
+        /**
+         * <code>string clientId = 3;</code>
+         */
+        java.lang.String getClientId();
+
+        /**
+         * <code>string clientId = 3;</code>
+         */
+        com.google.protobuf.ByteString
         getClientIdBytes();
-  }
-  /**
-   * Protobuf type {@code CreateRequest}
-   */
-  public  static final class CreateRequest extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:CreateRequest)
-      CreateRequestOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use CreateRequest.newBuilder() to construct.
-    private CreateRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
     }
-    private CreateRequest() {
-      amountOfPassengers_ = 0;
-      distance_ = 0D;
-      clientId_ = "";
+    public interface CompleteRequestOrBuilder extends
+            // @@protoc_insertion_point(interface_extends:CompleteRequest)
+            com.google.protobuf.MessageOrBuilder {
+
+        /**
+         * <code>string id = 1;</code>
+         */
+        java.lang.String getId();
+
+        /**
+         * <code>string id = 1;</code>
+         */
+        com.google.protobuf.ByteString
+        getIdBytes();
+    }
+    public interface ReportRequestOrBuilder extends
+            // @@protoc_insertion_point(interface_extends:ReportRequest)
+            com.google.protobuf.MessageOrBuilder {
+
+        /**
+         * <code>string id = 1;</code>
+         */
+        java.lang.String getId();
+
+        /**
+         * <code>string id = 1;</code>
+         */
+        com.google.protobuf.ByteString
+        getIdBytes();
+    }
+    public interface OrderResponseOrBuilder extends
+            // @@protoc_insertion_point(interface_extends:OrderResponse)
+            com.google.protobuf.MessageOrBuilder {
+
+        /**
+         * <code>string orderId = 1;</code>
+         */
+        java.lang.String getOrderId();
+
+        /**
+         * <code>string orderId = 1;</code>
+         */
+        com.google.protobuf.ByteString
+        getOrderIdBytes();
+
+        /**
+         * <code>int32 amountOfPassengers = 2;</code>
+         */
+        int getAmountOfPassengers();
+
+        /**
+         * <code>double distance = 3;</code>
+         */
+        double getDistance();
+
+        /**
+         * <code>string clientId = 4;</code>
+         */
+        java.lang.String getClientId();
+
+        /**
+         * <code>string clientId = 4;</code>
+         */
+        com.google.protobuf.ByteString
+        getClientIdBytes();
+
+        /**
+         * <code>string driverId = 5;</code>
+         */
+        java.lang.String getDriverId();
+
+        /**
+         * <code>string driverId = 5;</code>
+         */
+        com.google.protobuf.ByteString
+        getDriverIdBytes();
+
+        /**
+         * <code>string carId = 6;</code>
+         */
+        java.lang.String getCarId();
+
+        /**
+         * <code>string carId = 6;</code>
+         */
+        com.google.protobuf.ByteString
+        getCarIdBytes();
+
+        /**
+         * <code>string status = 7;</code>
+         */
+        java.lang.String getStatus();
+
+        /**
+         * <code>string status = 7;</code>
+         */
+        com.google.protobuf.ByteString
+        getStatusBytes();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private CreateRequest(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              amountOfPassengers_ = input.readInt32();
-              break;
-            }
-            case 17: {
-
-              distance_ = input.readDouble();
-              break;
-            }
-            case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              clientId_ = s;
-              break;
-            }
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.example.demo.Api.Grpc.Order.internal_static_CreateRequest_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.example.demo.Api.Grpc.Order.internal_static_CreateRequest_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.example.demo.Api.Grpc.Order.CreateRequest.class, com.example.demo.Api.Grpc.Order.CreateRequest.Builder.class);
-    }
-
-    public static final int AMOUNTOFPASSENGERS_FIELD_NUMBER = 1;
-    private int amountOfPassengers_;
-    /**
-     * <code>int32 amountOfPassengers = 1;</code>
-     */
-    public int getAmountOfPassengers() {
-      return amountOfPassengers_;
-    }
-
-    public static final int DISTANCE_FIELD_NUMBER = 2;
-    private double distance_;
-    /**
-     * <code>double distance = 2;</code>
-     */
-    public double getDistance() {
-      return distance_;
-    }
-
-    public static final int CLIENTID_FIELD_NUMBER = 3;
-    private volatile java.lang.Object clientId_;
-    /**
-     * <code>string clientId = 3;</code>
-     */
-    public java.lang.String getClientId() {
-      java.lang.Object ref = clientId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        clientId_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string clientId = 3;</code>
-     */
-    public com.google.protobuf.ByteString
-        getClientIdBytes() {
-      java.lang.Object ref = clientId_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        clientId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (amountOfPassengers_ != 0) {
-        output.writeInt32(1, amountOfPassengers_);
-      }
-      if (distance_ != 0D) {
-        output.writeDouble(2, distance_);
-      }
-      if (!getClientIdBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, clientId_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (amountOfPassengers_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(1, amountOfPassengers_);
-      }
-      if (distance_ != 0D) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(2, distance_);
-      }
-      if (!getClientIdBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, clientId_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.example.demo.Api.Grpc.Order.CreateRequest)) {
-        return super.equals(obj);
-      }
-      com.example.demo.Api.Grpc.Order.CreateRequest other = (com.example.demo.Api.Grpc.Order.CreateRequest) obj;
-
-      boolean result = true;
-      result = result && (getAmountOfPassengers()
-          == other.getAmountOfPassengers());
-      result = result && (
-          java.lang.Double.doubleToLongBits(getDistance())
-          == java.lang.Double.doubleToLongBits(
-              other.getDistance()));
-      result = result && getClientId()
-          .equals(other.getClientId());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + AMOUNTOFPASSENGERS_FIELD_NUMBER;
-      hash = (53 * hash) + getAmountOfPassengers();
-      hash = (37 * hash) + DISTANCE_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          java.lang.Double.doubleToLongBits(getDistance()));
-      hash = (37 * hash) + CLIENTID_FIELD_NUMBER;
-      hash = (53 * hash) + getClientId().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.example.demo.Api.Grpc.Order.CreateRequest parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.example.demo.Api.Grpc.Order.CreateRequest parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.example.demo.Api.Grpc.Order.CreateRequest parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.example.demo.Api.Grpc.Order.CreateRequest parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.example.demo.Api.Grpc.Order.CreateRequest parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.example.demo.Api.Grpc.Order.CreateRequest parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.example.demo.Api.Grpc.Order.CreateRequest parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.example.demo.Api.Grpc.Order.CreateRequest parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.example.demo.Api.Grpc.Order.CreateRequest parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.example.demo.Api.Grpc.Order.CreateRequest parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.example.demo.Api.Grpc.Order.CreateRequest parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.example.demo.Api.Grpc.Order.CreateRequest parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.example.demo.Api.Grpc.Order.CreateRequest prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
     /**
      * Protobuf type {@code CreateRequest}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:CreateRequest)
-        com.example.demo.Api.Grpc.Order.CreateRequestOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.example.demo.Api.Grpc.Order.internal_static_CreateRequest_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.example.demo.Api.Grpc.Order.internal_static_CreateRequest_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.example.demo.Api.Grpc.Order.CreateRequest.class, com.example.demo.Api.Grpc.Order.CreateRequest.Builder.class);
-      }
-
-      // Construct using com.example.demo.Api.Grpc.Order.CreateRequest.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        amountOfPassengers_ = 0;
-
-        distance_ = 0D;
-
-        clientId_ = "";
-
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.example.demo.Api.Grpc.Order.internal_static_CreateRequest_descriptor;
-      }
-
-      @java.lang.Override
-      public com.example.demo.Api.Grpc.Order.CreateRequest getDefaultInstanceForType() {
-        return com.example.demo.Api.Grpc.Order.CreateRequest.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public com.example.demo.Api.Grpc.Order.CreateRequest build() {
-        com.example.demo.Api.Grpc.Order.CreateRequest result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public com.example.demo.Api.Grpc.Order.CreateRequest buildPartial() {
-        com.example.demo.Api.Grpc.Order.CreateRequest result = new com.example.demo.Api.Grpc.Order.CreateRequest(this);
-        result.amountOfPassengers_ = amountOfPassengers_;
-        result.distance_ = distance_;
-        result.clientId_ = clientId_;
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.example.demo.Api.Grpc.Order.CreateRequest) {
-          return mergeFrom((com.example.demo.Api.Grpc.Order.CreateRequest)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.example.demo.Api.Grpc.Order.CreateRequest other) {
-        if (other == com.example.demo.Api.Grpc.Order.CreateRequest.getDefaultInstance()) return this;
-        if (other.getAmountOfPassengers() != 0) {
-          setAmountOfPassengers(other.getAmountOfPassengers());
-        }
-        if (other.getDistance() != 0D) {
-          setDistance(other.getDistance());
-        }
-        if (!other.getClientId().isEmpty()) {
-          clientId_ = other.clientId_;
-          onChanged();
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.example.demo.Api.Grpc.Order.CreateRequest parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.example.demo.Api.Grpc.Order.CreateRequest) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private int amountOfPassengers_ ;
-      /**
-       * <code>int32 amountOfPassengers = 1;</code>
-       */
-      public int getAmountOfPassengers() {
-        return amountOfPassengers_;
-      }
-      /**
-       * <code>int32 amountOfPassengers = 1;</code>
-       */
-      public Builder setAmountOfPassengers(int value) {
-        
-        amountOfPassengers_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int32 amountOfPassengers = 1;</code>
-       */
-      public Builder clearAmountOfPassengers() {
-        
-        amountOfPassengers_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private double distance_ ;
-      /**
-       * <code>double distance = 2;</code>
-       */
-      public double getDistance() {
-        return distance_;
-      }
-      /**
-       * <code>double distance = 2;</code>
-       */
-      public Builder setDistance(double value) {
-        
-        distance_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>double distance = 2;</code>
-       */
-      public Builder clearDistance() {
-        
-        distance_ = 0D;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object clientId_ = "";
-      /**
-       * <code>string clientId = 3;</code>
-       */
-      public java.lang.String getClientId() {
-        java.lang.Object ref = clientId_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          clientId_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string clientId = 3;</code>
-       */
-      public com.google.protobuf.ByteString
-          getClientIdBytes() {
-        java.lang.Object ref = clientId_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          clientId_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string clientId = 3;</code>
-       */
-      public Builder setClientId(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        clientId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string clientId = 3;</code>
-       */
-      public Builder clearClientId() {
-        
-        clientId_ = getDefaultInstance().getClientId();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string clientId = 3;</code>
-       */
-      public Builder setClientIdBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        clientId_ = value;
-        onChanged();
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:CreateRequest)
-    }
-
-    // @@protoc_insertion_point(class_scope:CreateRequest)
-    private static final com.example.demo.Api.Grpc.Order.CreateRequest DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.example.demo.Api.Grpc.Order.CreateRequest();
-    }
-
-    public static com.example.demo.Api.Grpc.Order.CreateRequest getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<CreateRequest>
-        PARSER = new com.google.protobuf.AbstractParser<CreateRequest>() {
-      @java.lang.Override
-      public CreateRequest parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CreateRequest(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<CreateRequest> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<CreateRequest> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.example.demo.Api.Grpc.Order.CreateRequest getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface CompleteRequestOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:CompleteRequest)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>string id = 1;</code>
-     */
-    java.lang.String getId();
-    /**
-     * <code>string id = 1;</code>
-     */
-    com.google.protobuf.ByteString
-        getIdBytes();
-  }
-  /**
-   * Protobuf type {@code CompleteRequest}
-   */
-  public  static final class CompleteRequest extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:CompleteRequest)
-      CompleteRequestOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use CompleteRequest.newBuilder() to construct.
-    private CompleteRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private CompleteRequest() {
-      id_ = "";
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private CompleteRequest(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              id_ = s;
-              break;
+    public static final class CreateRequest extends
+            com.google.protobuf.GeneratedMessageV3 implements
+            // @@protoc_insertion_point(message_implements:CreateRequest)
+            CreateRequestOrBuilder {
+        public static final int AMOUNTOFPASSENGERS_FIELD_NUMBER = 1;
+        public static final int DISTANCE_FIELD_NUMBER = 2;
+        public static final int CLIENTID_FIELD_NUMBER = 3;
+        private static final long serialVersionUID = 0L;
+        // @@protoc_insertion_point(class_scope:CreateRequest)
+        private static final com.example.demo.Api.Grpc.Order.CreateRequest DEFAULT_INSTANCE;
+        private static final com.google.protobuf.Parser<CreateRequest>
+                PARSER = new com.google.protobuf.AbstractParser<CreateRequest>() {
+            @java.lang.Override
+            public CreateRequest parsePartialFrom(
+                    com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws com.google.protobuf.InvalidProtocolBufferException {
+                return new CreateRequest(input, extensionRegistry);
             }
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
+        };
+
+        static {
+            DEFAULT_INSTANCE = new com.example.demo.Api.Grpc.Order.CreateRequest();
         }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
+
+        private int amountOfPassengers_;
+        private double distance_;
+        private volatile java.lang.Object clientId_;
+        private byte memoizedIsInitialized = -1;
+        // Use CreateRequest.newBuilder() to construct.
+        private CreateRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+            super(builder);
+        }
+
+        private CreateRequest() {
+            amountOfPassengers_ = 0;
+            distance_ = 0D;
+            clientId_ = "";
+        }
+
+        private CreateRequest(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            this();
+            if (extensionRegistry == null) {
+                throw new java.lang.NullPointerException();
+            }
+            int mutable_bitField0_ = 0;
+            com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+                    com.google.protobuf.UnknownFieldSet.newBuilder();
+            try {
+                boolean done = false;
+                while (!done) {
+                    int tag = input.readTag();
+                    switch (tag) {
+                        case 0:
+                            done = true;
+                            break;
+                        case 8: {
+
+                            amountOfPassengers_ = input.readInt32();
+                            break;
+                        }
+                        case 17: {
+
+                            distance_ = input.readDouble();
+                            break;
+                        }
+                        case 26: {
+                            java.lang.String s = input.readStringRequireUtf8();
+
+                            clientId_ = s;
+                            break;
+                        }
+                        default: {
+                            if (!parseUnknownFieldProto3(
+                                    input, unknownFields, extensionRegistry, tag)) {
+                                done = true;
+                            }
+                            break;
+                        }
+                    }
+                }
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(this);
+            } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(
+                        e).setUnfinishedMessage(this);
+            } finally {
+                this.unknownFields = unknownFields.build();
+                makeExtensionsImmutable();
+            }
+        }
+
+        public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.example.demo.Api.Grpc.Order.internal_static_CompleteRequest_descriptor;
-    }
+            return com.example.demo.Api.Grpc.Order.internal_static_CreateRequest_descriptor;
+        }
 
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        public static com.example.demo.Api.Grpc.Order.CreateRequest parseFrom(
+                java.nio.ByteBuffer data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static com.example.demo.Api.Grpc.Order.CreateRequest parseFrom(
+                java.nio.ByteBuffer data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.example.demo.Api.Grpc.Order.CreateRequest parseFrom(
+                com.google.protobuf.ByteString data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static com.example.demo.Api.Grpc.Order.CreateRequest parseFrom(
+                com.google.protobuf.ByteString data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.example.demo.Api.Grpc.Order.CreateRequest parseFrom(byte[] data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static com.example.demo.Api.Grpc.Order.CreateRequest parseFrom(
+                byte[] data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.example.demo.Api.Grpc.Order.CreateRequest parseFrom(java.io.InputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input);
+        }
+
+        public static com.example.demo.Api.Grpc.Order.CreateRequest parseFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static com.example.demo.Api.Grpc.Order.CreateRequest parseDelimitedFrom(java.io.InputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseDelimitedWithIOException(PARSER, input);
+        }
+
+        public static com.example.demo.Api.Grpc.Order.CreateRequest parseDelimitedFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static com.example.demo.Api.Grpc.Order.CreateRequest parseFrom(
+                com.google.protobuf.CodedInputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input);
+        }
+
+        public static com.example.demo.Api.Grpc.Order.CreateRequest parseFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static Builder newBuilder() {
+            return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(com.example.demo.Api.Grpc.Order.CreateRequest prototype) {
+            return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        public static com.example.demo.Api.Grpc.Order.CreateRequest getDefaultInstance() {
+            return DEFAULT_INSTANCE;
+        }
+
+        public static com.google.protobuf.Parser<CreateRequest> parser() {
+            return PARSER;
+        }
+
+        @java.lang.Override
+        public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+            return this.unknownFields;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.example.demo.Api.Grpc.Order.internal_static_CompleteRequest_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.example.demo.Api.Grpc.Order.CompleteRequest.class, com.example.demo.Api.Grpc.Order.CompleteRequest.Builder.class);
+            return com.example.demo.Api.Grpc.Order.internal_static_CreateRequest_fieldAccessorTable
+                    .ensureFieldAccessorsInitialized(
+                            com.example.demo.Api.Grpc.Order.CreateRequest.class, com.example.demo.Api.Grpc.Order.CreateRequest.Builder.class);
+        }
+
+        /**
+         * <code>int32 amountOfPassengers = 1;</code>
+         */
+        public int getAmountOfPassengers() {
+            return amountOfPassengers_;
+        }
+
+        /**
+         * <code>double distance = 2;</code>
+         */
+        public double getDistance() {
+            return distance_;
+        }
+
+        /**
+         * <code>string clientId = 3;</code>
+         */
+        public java.lang.String getClientId() {
+            java.lang.Object ref = clientId_;
+            if (ref instanceof java.lang.String) {
+                return (java.lang.String) ref;
+            } else {
+                com.google.protobuf.ByteString bs =
+                        (com.google.protobuf.ByteString) ref;
+                java.lang.String s = bs.toStringUtf8();
+                clientId_ = s;
+                return s;
+            }
+        }
+
+        /**
+         * <code>string clientId = 3;</code>
+         */
+        public com.google.protobuf.ByteString
+        getClientIdBytes() {
+            java.lang.Object ref = clientId_;
+            if (ref instanceof java.lang.String) {
+                com.google.protobuf.ByteString b =
+                        com.google.protobuf.ByteString.copyFromUtf8(
+                                (java.lang.String) ref);
+                clientId_ = b;
+                return b;
+            } else {
+                return (com.google.protobuf.ByteString) ref;
+            }
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+            byte isInitialized = memoizedIsInitialized;
+            if (isInitialized == 1) return true;
+            if (isInitialized == 0) return false;
+
+            memoizedIsInitialized = 1;
+            return true;
+        }
+
+        @java.lang.Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+                throws java.io.IOException {
+            if (amountOfPassengers_ != 0) {
+                output.writeInt32(1, amountOfPassengers_);
+            }
+            if (distance_ != 0D) {
+                output.writeDouble(2, distance_);
+            }
+            if (!getClientIdBytes().isEmpty()) {
+                com.google.protobuf.GeneratedMessageV3.writeString(output, 3, clientId_);
+            }
+            unknownFields.writeTo(output);
+        }
+
+        @java.lang.Override
+        public int getSerializedSize() {
+            int size = memoizedSize;
+            if (size != -1) return size;
+
+            size = 0;
+            if (amountOfPassengers_ != 0) {
+                size += com.google.protobuf.CodedOutputStream
+                        .computeInt32Size(1, amountOfPassengers_);
+            }
+            if (distance_ != 0D) {
+                size += com.google.protobuf.CodedOutputStream
+                        .computeDoubleSize(2, distance_);
+            }
+            if (!getClientIdBytes().isEmpty()) {
+                size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, clientId_);
+            }
+            size += unknownFields.getSerializedSize();
+            memoizedSize = size;
+            return size;
+        }
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+            if (obj == this) {
+                return true;
+            }
+            if (!(obj instanceof com.example.demo.Api.Grpc.Order.CreateRequest)) {
+                return super.equals(obj);
+            }
+            com.example.demo.Api.Grpc.Order.CreateRequest other = (com.example.demo.Api.Grpc.Order.CreateRequest) obj;
+
+            boolean result = true;
+            result = result && (getAmountOfPassengers()
+                    == other.getAmountOfPassengers());
+            result = result && (
+                    java.lang.Double.doubleToLongBits(getDistance())
+                            == java.lang.Double.doubleToLongBits(
+                            other.getDistance()));
+            result = result && getClientId()
+                    .equals(other.getClientId());
+            result = result && unknownFields.equals(other.unknownFields);
+            return result;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+            if (memoizedHashCode != 0) {
+                return memoizedHashCode;
+            }
+            int hash = 41;
+            hash = (19 * hash) + getDescriptor().hashCode();
+            hash = (37 * hash) + AMOUNTOFPASSENGERS_FIELD_NUMBER;
+            hash = (53 * hash) + getAmountOfPassengers();
+            hash = (37 * hash) + DISTANCE_FIELD_NUMBER;
+            hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+                    java.lang.Double.doubleToLongBits(getDistance()));
+            hash = (37 * hash) + CLIENTID_FIELD_NUMBER;
+            hash = (53 * hash) + getClientId().hashCode();
+            hash = (29 * hash) + unknownFields.hashCode();
+            memoizedHashCode = hash;
+            return hash;
+        }
+
+        @java.lang.Override
+        public Builder newBuilderForType() {
+            return newBuilder();
+        }
+
+        @java.lang.Override
+        public Builder toBuilder() {
+            return this == DEFAULT_INSTANCE
+                    ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(
+                com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            Builder builder = new Builder(parent);
+            return builder;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<CreateRequest> getParserForType() {
+            return PARSER;
+        }
+
+        @java.lang.Override
+        public com.example.demo.Api.Grpc.Order.CreateRequest getDefaultInstanceForType() {
+            return DEFAULT_INSTANCE;
+        }
+
+        /**
+         * Protobuf type {@code CreateRequest}
+         */
+        public static final class Builder extends
+                com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+                // @@protoc_insertion_point(builder_implements:CreateRequest)
+                com.example.demo.Api.Grpc.Order.CreateRequestOrBuilder {
+            private int amountOfPassengers_;
+            private double distance_;
+            private java.lang.Object clientId_ = "";
+
+            // Construct using com.example.demo.Api.Grpc.Order.CreateRequest.newBuilder()
+            private Builder() {
+                maybeForceBuilderInitialization();
+            }
+
+            private Builder(
+                    com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+                super(parent);
+                maybeForceBuilderInitialization();
+            }
+
+            public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+                return com.example.demo.Api.Grpc.Order.internal_static_CreateRequest_descriptor;
+            }
+
+            @java.lang.Override
+            protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+                return com.example.demo.Api.Grpc.Order.internal_static_CreateRequest_fieldAccessorTable
+                        .ensureFieldAccessorsInitialized(
+                                com.example.demo.Api.Grpc.Order.CreateRequest.class, com.example.demo.Api.Grpc.Order.CreateRequest.Builder.class);
+            }
+
+            private void maybeForceBuilderInitialization() {
+                if (com.google.protobuf.GeneratedMessageV3
+                        .alwaysUseFieldBuilders) {
+                }
+            }
+
+            @java.lang.Override
+            public Builder clear() {
+                super.clear();
+                amountOfPassengers_ = 0;
+
+                distance_ = 0D;
+
+                clientId_ = "";
+
+                return this;
+            }
+
+            @java.lang.Override
+            public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+                return com.example.demo.Api.Grpc.Order.internal_static_CreateRequest_descriptor;
+            }
+
+            @java.lang.Override
+            public com.example.demo.Api.Grpc.Order.CreateRequest getDefaultInstanceForType() {
+                return com.example.demo.Api.Grpc.Order.CreateRequest.getDefaultInstance();
+            }
+
+            @java.lang.Override
+            public com.example.demo.Api.Grpc.Order.CreateRequest build() {
+                com.example.demo.Api.Grpc.Order.CreateRequest result = buildPartial();
+                if (!result.isInitialized()) {
+                    throw newUninitializedMessageException(result);
+                }
+                return result;
+            }
+
+            @java.lang.Override
+            public com.example.demo.Api.Grpc.Order.CreateRequest buildPartial() {
+                com.example.demo.Api.Grpc.Order.CreateRequest result = new com.example.demo.Api.Grpc.Order.CreateRequest(this);
+                result.amountOfPassengers_ = amountOfPassengers_;
+                result.distance_ = distance_;
+                result.clientId_ = clientId_;
+                onBuilt();
+                return result;
+            }
+
+            @java.lang.Override
+            public Builder clone() {
+                return super.clone();
+            }
+
+            @java.lang.Override
+            public Builder setField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    java.lang.Object value) {
+                return super.setField(field, value);
+            }
+
+            @java.lang.Override
+            public Builder clearField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field) {
+                return super.clearField(field);
+            }
+
+            @java.lang.Override
+            public Builder clearOneof(
+                    com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+                return super.clearOneof(oneof);
+            }
+
+            @java.lang.Override
+            public Builder setRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    int index, java.lang.Object value) {
+                return super.setRepeatedField(field, index, value);
+            }
+
+            @java.lang.Override
+            public Builder addRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    java.lang.Object value) {
+                return super.addRepeatedField(field, value);
+            }
+
+            @java.lang.Override
+            public Builder mergeFrom(com.google.protobuf.Message other) {
+                if (other instanceof com.example.demo.Api.Grpc.Order.CreateRequest) {
+                    return mergeFrom((com.example.demo.Api.Grpc.Order.CreateRequest) other);
+                } else {
+                    super.mergeFrom(other);
+                    return this;
+                }
+            }
+
+            public Builder mergeFrom(com.example.demo.Api.Grpc.Order.CreateRequest other) {
+                if (other == com.example.demo.Api.Grpc.Order.CreateRequest.getDefaultInstance()) return this;
+                if (other.getAmountOfPassengers() != 0) {
+                    setAmountOfPassengers(other.getAmountOfPassengers());
+                }
+                if (other.getDistance() != 0D) {
+                    setDistance(other.getDistance());
+                }
+                if (!other.getClientId().isEmpty()) {
+                    clientId_ = other.clientId_;
+                    onChanged();
+                }
+                this.mergeUnknownFields(other.unknownFields);
+                onChanged();
+                return this;
+            }
+
+            @java.lang.Override
+            public final boolean isInitialized() {
+                return true;
+            }
+
+            @java.lang.Override
+            public Builder mergeFrom(
+                    com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws java.io.IOException {
+                com.example.demo.Api.Grpc.Order.CreateRequest parsedMessage = null;
+                try {
+                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                    parsedMessage = (com.example.demo.Api.Grpc.Order.CreateRequest) e.getUnfinishedMessage();
+                    throw e.unwrapIOException();
+                } finally {
+                    if (parsedMessage != null) {
+                        mergeFrom(parsedMessage);
+                    }
+                }
+                return this;
+            }
+
+            /**
+             * <code>int32 amountOfPassengers = 1;</code>
+             */
+            public int getAmountOfPassengers() {
+                return amountOfPassengers_;
+            }
+
+            /**
+             * <code>int32 amountOfPassengers = 1;</code>
+             */
+            public Builder setAmountOfPassengers(int value) {
+
+                amountOfPassengers_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>int32 amountOfPassengers = 1;</code>
+             */
+            public Builder clearAmountOfPassengers() {
+
+                amountOfPassengers_ = 0;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>double distance = 2;</code>
+             */
+            public double getDistance() {
+                return distance_;
+            }
+
+            /**
+             * <code>double distance = 2;</code>
+             */
+            public Builder setDistance(double value) {
+
+                distance_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>double distance = 2;</code>
+             */
+            public Builder clearDistance() {
+
+                distance_ = 0D;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>string clientId = 3;</code>
+             */
+            public java.lang.String getClientId() {
+                java.lang.Object ref = clientId_;
+                if (!(ref instanceof java.lang.String)) {
+                    com.google.protobuf.ByteString bs =
+                            (com.google.protobuf.ByteString) ref;
+                    java.lang.String s = bs.toStringUtf8();
+                    clientId_ = s;
+                    return s;
+                } else {
+                    return (java.lang.String) ref;
+                }
+            }
+
+            /**
+             * <code>string clientId = 3;</code>
+             */
+            public Builder setClientId(
+                    java.lang.String value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+
+                clientId_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>string clientId = 3;</code>
+             */
+            public com.google.protobuf.ByteString
+            getClientIdBytes() {
+                java.lang.Object ref = clientId_;
+                if (ref instanceof String) {
+                    com.google.protobuf.ByteString b =
+                            com.google.protobuf.ByteString.copyFromUtf8(
+                                    (java.lang.String) ref);
+                    clientId_ = b;
+                    return b;
+                } else {
+                    return (com.google.protobuf.ByteString) ref;
+                }
+            }
+
+            /**
+             * <code>string clientId = 3;</code>
+             */
+            public Builder setClientIdBytes(
+                    com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                checkByteStringIsUtf8(value);
+
+                clientId_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>string clientId = 3;</code>
+             */
+            public Builder clearClientId() {
+
+                clientId_ = getDefaultInstance().getClientId();
+                onChanged();
+                return this;
+            }
+
+            @java.lang.Override
+            public final Builder setUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return super.setUnknownFieldsProto3(unknownFields);
+            }
+
+            @java.lang.Override
+            public final Builder mergeUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return super.mergeUnknownFields(unknownFields);
+            }
+
+
+            // @@protoc_insertion_point(builder_scope:CreateRequest)
+        }
+
     }
 
-    public static final int ID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object id_;
-    /**
-     * <code>string id = 1;</code>
-     */
-    public java.lang.String getId() {
-      java.lang.Object ref = id_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        id_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string id = 1;</code>
-     */
-    public com.google.protobuf.ByteString
-        getIdBytes() {
-      java.lang.Object ref = id_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        id_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (!getIdBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (!getIdBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.example.demo.Api.Grpc.Order.CompleteRequest)) {
-        return super.equals(obj);
-      }
-      com.example.demo.Api.Grpc.Order.CompleteRequest other = (com.example.demo.Api.Grpc.Order.CompleteRequest) obj;
-
-      boolean result = true;
-      result = result && getId()
-          .equals(other.getId());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + ID_FIELD_NUMBER;
-      hash = (53 * hash) + getId().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.example.demo.Api.Grpc.Order.CompleteRequest parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.example.demo.Api.Grpc.Order.CompleteRequest parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.example.demo.Api.Grpc.Order.CompleteRequest parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.example.demo.Api.Grpc.Order.CompleteRequest parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.example.demo.Api.Grpc.Order.CompleteRequest parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.example.demo.Api.Grpc.Order.CompleteRequest parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.example.demo.Api.Grpc.Order.CompleteRequest parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.example.demo.Api.Grpc.Order.CompleteRequest parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.example.demo.Api.Grpc.Order.CompleteRequest parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.example.demo.Api.Grpc.Order.CompleteRequest parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.example.demo.Api.Grpc.Order.CompleteRequest parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.example.demo.Api.Grpc.Order.CompleteRequest parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.example.demo.Api.Grpc.Order.CompleteRequest prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
     /**
      * Protobuf type {@code CompleteRequest}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:CompleteRequest)
-        com.example.demo.Api.Grpc.Order.CompleteRequestOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.example.demo.Api.Grpc.Order.internal_static_CompleteRequest_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.example.demo.Api.Grpc.Order.internal_static_CompleteRequest_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.example.demo.Api.Grpc.Order.CompleteRequest.class, com.example.demo.Api.Grpc.Order.CompleteRequest.Builder.class);
-      }
-
-      // Construct using com.example.demo.Api.Grpc.Order.CompleteRequest.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        id_ = "";
-
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.example.demo.Api.Grpc.Order.internal_static_CompleteRequest_descriptor;
-      }
-
-      @java.lang.Override
-      public com.example.demo.Api.Grpc.Order.CompleteRequest getDefaultInstanceForType() {
-        return com.example.demo.Api.Grpc.Order.CompleteRequest.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public com.example.demo.Api.Grpc.Order.CompleteRequest build() {
-        com.example.demo.Api.Grpc.Order.CompleteRequest result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public com.example.demo.Api.Grpc.Order.CompleteRequest buildPartial() {
-        com.example.demo.Api.Grpc.Order.CompleteRequest result = new com.example.demo.Api.Grpc.Order.CompleteRequest(this);
-        result.id_ = id_;
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.example.demo.Api.Grpc.Order.CompleteRequest) {
-          return mergeFrom((com.example.demo.Api.Grpc.Order.CompleteRequest)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.example.demo.Api.Grpc.Order.CompleteRequest other) {
-        if (other == com.example.demo.Api.Grpc.Order.CompleteRequest.getDefaultInstance()) return this;
-        if (!other.getId().isEmpty()) {
-          id_ = other.id_;
-          onChanged();
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.example.demo.Api.Grpc.Order.CompleteRequest parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.example.demo.Api.Grpc.Order.CompleteRequest) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private java.lang.Object id_ = "";
-      /**
-       * <code>string id = 1;</code>
-       */
-      public java.lang.String getId() {
-        java.lang.Object ref = id_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          id_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string id = 1;</code>
-       */
-      public com.google.protobuf.ByteString
-          getIdBytes() {
-        java.lang.Object ref = id_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          id_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string id = 1;</code>
-       */
-      public Builder setId(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        id_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string id = 1;</code>
-       */
-      public Builder clearId() {
-        
-        id_ = getDefaultInstance().getId();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string id = 1;</code>
-       */
-      public Builder setIdBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        id_ = value;
-        onChanged();
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:CompleteRequest)
-    }
-
-    // @@protoc_insertion_point(class_scope:CompleteRequest)
-    private static final com.example.demo.Api.Grpc.Order.CompleteRequest DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.example.demo.Api.Grpc.Order.CompleteRequest();
-    }
-
-    public static com.example.demo.Api.Grpc.Order.CompleteRequest getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<CompleteRequest>
-        PARSER = new com.google.protobuf.AbstractParser<CompleteRequest>() {
-      @java.lang.Override
-      public CompleteRequest parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CompleteRequest(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<CompleteRequest> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<CompleteRequest> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.example.demo.Api.Grpc.Order.CompleteRequest getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface ReportRequestOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:ReportRequest)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>string id = 1;</code>
-     */
-    java.lang.String getId();
-    /**
-     * <code>string id = 1;</code>
-     */
-    com.google.protobuf.ByteString
-        getIdBytes();
-  }
-  /**
-   * Protobuf type {@code ReportRequest}
-   */
-  public  static final class ReportRequest extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:ReportRequest)
-      ReportRequestOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use ReportRequest.newBuilder() to construct.
-    private ReportRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private ReportRequest() {
-      id_ = "";
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private ReportRequest(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              id_ = s;
-              break;
+    public static final class CompleteRequest extends
+            com.google.protobuf.GeneratedMessageV3 implements
+            // @@protoc_insertion_point(message_implements:CompleteRequest)
+            CompleteRequestOrBuilder {
+        public static final int ID_FIELD_NUMBER = 1;
+        private static final long serialVersionUID = 0L;
+        // @@protoc_insertion_point(class_scope:CompleteRequest)
+        private static final com.example.demo.Api.Grpc.Order.CompleteRequest DEFAULT_INSTANCE;
+        private static final com.google.protobuf.Parser<CompleteRequest>
+                PARSER = new com.google.protobuf.AbstractParser<CompleteRequest>() {
+            @java.lang.Override
+            public CompleteRequest parsePartialFrom(
+                    com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws com.google.protobuf.InvalidProtocolBufferException {
+                return new CompleteRequest(input, extensionRegistry);
             }
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
+        };
+
+        static {
+            DEFAULT_INSTANCE = new com.example.demo.Api.Grpc.Order.CompleteRequest();
         }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
+
+        private volatile java.lang.Object id_;
+        private byte memoizedIsInitialized = -1;
+
+        // Use CompleteRequest.newBuilder() to construct.
+        private CompleteRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+            super(builder);
+        }
+        private CompleteRequest() {
+            id_ = "";
+        }
+
+        private CompleteRequest(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            this();
+            if (extensionRegistry == null) {
+                throw new java.lang.NullPointerException();
+            }
+            int mutable_bitField0_ = 0;
+            com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+                    com.google.protobuf.UnknownFieldSet.newBuilder();
+            try {
+                boolean done = false;
+                while (!done) {
+                    int tag = input.readTag();
+                    switch (tag) {
+                        case 0:
+                            done = true;
+                            break;
+                        case 10: {
+                            java.lang.String s = input.readStringRequireUtf8();
+
+                            id_ = s;
+                            break;
+                        }
+                        default: {
+                            if (!parseUnknownFieldProto3(
+                                    input, unknownFields, extensionRegistry, tag)) {
+                                done = true;
+                            }
+                            break;
+                        }
+                    }
+                }
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(this);
+            } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(
+                        e).setUnfinishedMessage(this);
+            } finally {
+                this.unknownFields = unknownFields.build();
+                makeExtensionsImmutable();
+            }
+        }
+
+        public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.example.demo.Api.Grpc.Order.internal_static_ReportRequest_descriptor;
-    }
+            return com.example.demo.Api.Grpc.Order.internal_static_CompleteRequest_descriptor;
+        }
 
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        public static com.example.demo.Api.Grpc.Order.CompleteRequest parseFrom(
+                java.nio.ByteBuffer data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static com.example.demo.Api.Grpc.Order.CompleteRequest parseFrom(
+                java.nio.ByteBuffer data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.example.demo.Api.Grpc.Order.CompleteRequest parseFrom(
+                com.google.protobuf.ByteString data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static com.example.demo.Api.Grpc.Order.CompleteRequest parseFrom(
+                com.google.protobuf.ByteString data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.example.demo.Api.Grpc.Order.CompleteRequest parseFrom(byte[] data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static com.example.demo.Api.Grpc.Order.CompleteRequest parseFrom(
+                byte[] data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.example.demo.Api.Grpc.Order.CompleteRequest parseFrom(java.io.InputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input);
+        }
+
+        public static com.example.demo.Api.Grpc.Order.CompleteRequest parseFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static com.example.demo.Api.Grpc.Order.CompleteRequest parseDelimitedFrom(java.io.InputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseDelimitedWithIOException(PARSER, input);
+        }
+
+        public static com.example.demo.Api.Grpc.Order.CompleteRequest parseDelimitedFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static com.example.demo.Api.Grpc.Order.CompleteRequest parseFrom(
+                com.google.protobuf.CodedInputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input);
+        }
+
+        public static com.example.demo.Api.Grpc.Order.CompleteRequest parseFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static Builder newBuilder() {
+            return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(com.example.demo.Api.Grpc.Order.CompleteRequest prototype) {
+            return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        public static com.example.demo.Api.Grpc.Order.CompleteRequest getDefaultInstance() {
+            return DEFAULT_INSTANCE;
+        }
+
+        public static com.google.protobuf.Parser<CompleteRequest> parser() {
+            return PARSER;
+        }
+
+        @java.lang.Override
+        public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+            return this.unknownFields;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.example.demo.Api.Grpc.Order.internal_static_ReportRequest_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.example.demo.Api.Grpc.Order.ReportRequest.class, com.example.demo.Api.Grpc.Order.ReportRequest.Builder.class);
-    }
+            return com.example.demo.Api.Grpc.Order.internal_static_CompleteRequest_fieldAccessorTable
+                    .ensureFieldAccessorsInitialized(
+                            com.example.demo.Api.Grpc.Order.CompleteRequest.class, com.example.demo.Api.Grpc.Order.CompleteRequest.Builder.class);
+        }
 
-    public static final int ID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object id_;
-    /**
-     * <code>string id = 1;</code>
-     */
-    public java.lang.String getId() {
-      java.lang.Object ref = id_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        id_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string id = 1;</code>
-     */
-    public com.google.protobuf.ByteString
+        /**
+         * <code>string id = 1;</code>
+         */
+        public java.lang.String getId() {
+            java.lang.Object ref = id_;
+            if (ref instanceof java.lang.String) {
+                return (java.lang.String) ref;
+            } else {
+                com.google.protobuf.ByteString bs =
+                        (com.google.protobuf.ByteString) ref;
+                java.lang.String s = bs.toStringUtf8();
+                id_ = s;
+                return s;
+            }
+        }
+
+        /**
+         * <code>string id = 1;</code>
+         */
+        public com.google.protobuf.ByteString
         getIdBytes() {
-      java.lang.Object ref = id_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        id_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+            java.lang.Object ref = id_;
+            if (ref instanceof java.lang.String) {
+                com.google.protobuf.ByteString b =
+                        com.google.protobuf.ByteString.copyFromUtf8(
+                                (java.lang.String) ref);
+                id_ = b;
+                return b;
+            } else {
+                return (com.google.protobuf.ByteString) ref;
+            }
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+            byte isInitialized = memoizedIsInitialized;
+            if (isInitialized == 1) return true;
+            if (isInitialized == 0) return false;
+
+            memoizedIsInitialized = 1;
+            return true;
+        }
+
+        @java.lang.Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+                throws java.io.IOException {
+            if (!getIdBytes().isEmpty()) {
+                com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
+            }
+            unknownFields.writeTo(output);
+        }
+
+        @java.lang.Override
+        public int getSerializedSize() {
+            int size = memoizedSize;
+            if (size != -1) return size;
+
+            size = 0;
+            if (!getIdBytes().isEmpty()) {
+                size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
+            }
+            size += unknownFields.getSerializedSize();
+            memoizedSize = size;
+            return size;
+        }
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+            if (obj == this) {
+                return true;
+            }
+            if (!(obj instanceof com.example.demo.Api.Grpc.Order.CompleteRequest)) {
+                return super.equals(obj);
+            }
+            com.example.demo.Api.Grpc.Order.CompleteRequest other = (com.example.demo.Api.Grpc.Order.CompleteRequest) obj;
+
+            boolean result = true;
+            result = result && getId()
+                    .equals(other.getId());
+            result = result && unknownFields.equals(other.unknownFields);
+            return result;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+            if (memoizedHashCode != 0) {
+                return memoizedHashCode;
+            }
+            int hash = 41;
+            hash = (19 * hash) + getDescriptor().hashCode();
+            hash = (37 * hash) + ID_FIELD_NUMBER;
+            hash = (53 * hash) + getId().hashCode();
+            hash = (29 * hash) + unknownFields.hashCode();
+            memoizedHashCode = hash;
+            return hash;
+        }
+
+        @java.lang.Override
+        public Builder newBuilderForType() {
+            return newBuilder();
+        }
+
+        @java.lang.Override
+        public Builder toBuilder() {
+            return this == DEFAULT_INSTANCE
+                    ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(
+                com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            Builder builder = new Builder(parent);
+            return builder;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<CompleteRequest> getParserForType() {
+            return PARSER;
+        }
+
+        @java.lang.Override
+        public com.example.demo.Api.Grpc.Order.CompleteRequest getDefaultInstanceForType() {
+            return DEFAULT_INSTANCE;
+        }
+
+        /**
+         * Protobuf type {@code CompleteRequest}
+         */
+        public static final class Builder extends
+                com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+                // @@protoc_insertion_point(builder_implements:CompleteRequest)
+                com.example.demo.Api.Grpc.Order.CompleteRequestOrBuilder {
+            private java.lang.Object id_ = "";
+
+            // Construct using com.example.demo.Api.Grpc.Order.CompleteRequest.newBuilder()
+            private Builder() {
+                maybeForceBuilderInitialization();
+            }
+
+            private Builder(
+                    com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+                super(parent);
+                maybeForceBuilderInitialization();
+            }
+
+            public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+                return com.example.demo.Api.Grpc.Order.internal_static_CompleteRequest_descriptor;
+            }
+
+            @java.lang.Override
+            protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+                return com.example.demo.Api.Grpc.Order.internal_static_CompleteRequest_fieldAccessorTable
+                        .ensureFieldAccessorsInitialized(
+                                com.example.demo.Api.Grpc.Order.CompleteRequest.class, com.example.demo.Api.Grpc.Order.CompleteRequest.Builder.class);
+            }
+
+            private void maybeForceBuilderInitialization() {
+                if (com.google.protobuf.GeneratedMessageV3
+                        .alwaysUseFieldBuilders) {
+                }
+            }
+
+            @java.lang.Override
+            public Builder clear() {
+                super.clear();
+                id_ = "";
+
+                return this;
+            }
+
+            @java.lang.Override
+            public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+                return com.example.demo.Api.Grpc.Order.internal_static_CompleteRequest_descriptor;
+            }
+
+            @java.lang.Override
+            public com.example.demo.Api.Grpc.Order.CompleteRequest getDefaultInstanceForType() {
+                return com.example.demo.Api.Grpc.Order.CompleteRequest.getDefaultInstance();
+            }
+
+            @java.lang.Override
+            public com.example.demo.Api.Grpc.Order.CompleteRequest build() {
+                com.example.demo.Api.Grpc.Order.CompleteRequest result = buildPartial();
+                if (!result.isInitialized()) {
+                    throw newUninitializedMessageException(result);
+                }
+                return result;
+            }
+
+            @java.lang.Override
+            public com.example.demo.Api.Grpc.Order.CompleteRequest buildPartial() {
+                com.example.demo.Api.Grpc.Order.CompleteRequest result = new com.example.demo.Api.Grpc.Order.CompleteRequest(this);
+                result.id_ = id_;
+                onBuilt();
+                return result;
+            }
+
+            @java.lang.Override
+            public Builder clone() {
+                return super.clone();
+            }
+
+            @java.lang.Override
+            public Builder setField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    java.lang.Object value) {
+                return super.setField(field, value);
+            }
+
+            @java.lang.Override
+            public Builder clearField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field) {
+                return super.clearField(field);
+            }
+
+            @java.lang.Override
+            public Builder clearOneof(
+                    com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+                return super.clearOneof(oneof);
+            }
+
+            @java.lang.Override
+            public Builder setRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    int index, java.lang.Object value) {
+                return super.setRepeatedField(field, index, value);
+            }
+
+            @java.lang.Override
+            public Builder addRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    java.lang.Object value) {
+                return super.addRepeatedField(field, value);
+            }
+
+            @java.lang.Override
+            public Builder mergeFrom(com.google.protobuf.Message other) {
+                if (other instanceof com.example.demo.Api.Grpc.Order.CompleteRequest) {
+                    return mergeFrom((com.example.demo.Api.Grpc.Order.CompleteRequest) other);
+                } else {
+                    super.mergeFrom(other);
+                    return this;
+                }
+            }
+
+            public Builder mergeFrom(com.example.demo.Api.Grpc.Order.CompleteRequest other) {
+                if (other == com.example.demo.Api.Grpc.Order.CompleteRequest.getDefaultInstance()) return this;
+                if (!other.getId().isEmpty()) {
+                    id_ = other.id_;
+                    onChanged();
+                }
+                this.mergeUnknownFields(other.unknownFields);
+                onChanged();
+                return this;
+            }
+
+            @java.lang.Override
+            public final boolean isInitialized() {
+                return true;
+            }
+
+            @java.lang.Override
+            public Builder mergeFrom(
+                    com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws java.io.IOException {
+                com.example.demo.Api.Grpc.Order.CompleteRequest parsedMessage = null;
+                try {
+                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                    parsedMessage = (com.example.demo.Api.Grpc.Order.CompleteRequest) e.getUnfinishedMessage();
+                    throw e.unwrapIOException();
+                } finally {
+                    if (parsedMessage != null) {
+                        mergeFrom(parsedMessage);
+                    }
+                }
+                return this;
+            }
+
+            /**
+             * <code>string id = 1;</code>
+             */
+            public java.lang.String getId() {
+                java.lang.Object ref = id_;
+                if (!(ref instanceof java.lang.String)) {
+                    com.google.protobuf.ByteString bs =
+                            (com.google.protobuf.ByteString) ref;
+                    java.lang.String s = bs.toStringUtf8();
+                    id_ = s;
+                    return s;
+                } else {
+                    return (java.lang.String) ref;
+                }
+            }
+
+            /**
+             * <code>string id = 1;</code>
+             */
+            public Builder setId(
+                    java.lang.String value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+
+                id_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>string id = 1;</code>
+             */
+            public com.google.protobuf.ByteString
+            getIdBytes() {
+                java.lang.Object ref = id_;
+                if (ref instanceof String) {
+                    com.google.protobuf.ByteString b =
+                            com.google.protobuf.ByteString.copyFromUtf8(
+                                    (java.lang.String) ref);
+                    id_ = b;
+                    return b;
+                } else {
+                    return (com.google.protobuf.ByteString) ref;
+                }
+            }
+
+            /**
+             * <code>string id = 1;</code>
+             */
+            public Builder setIdBytes(
+                    com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                checkByteStringIsUtf8(value);
+
+                id_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>string id = 1;</code>
+             */
+            public Builder clearId() {
+
+                id_ = getDefaultInstance().getId();
+                onChanged();
+                return this;
+            }
+
+            @java.lang.Override
+            public final Builder setUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return super.setUnknownFieldsProto3(unknownFields);
+            }
+
+            @java.lang.Override
+            public final Builder mergeUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return super.mergeUnknownFields(unknownFields);
+            }
+
+
+            // @@protoc_insertion_point(builder_scope:CompleteRequest)
+        }
+
     }
 
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (!getIdBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (!getIdBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.example.demo.Api.Grpc.Order.ReportRequest)) {
-        return super.equals(obj);
-      }
-      com.example.demo.Api.Grpc.Order.ReportRequest other = (com.example.demo.Api.Grpc.Order.ReportRequest) obj;
-
-      boolean result = true;
-      result = result && getId()
-          .equals(other.getId());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + ID_FIELD_NUMBER;
-      hash = (53 * hash) + getId().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.example.demo.Api.Grpc.Order.ReportRequest parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.example.demo.Api.Grpc.Order.ReportRequest parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.example.demo.Api.Grpc.Order.ReportRequest parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.example.demo.Api.Grpc.Order.ReportRequest parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.example.demo.Api.Grpc.Order.ReportRequest parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.example.demo.Api.Grpc.Order.ReportRequest parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.example.demo.Api.Grpc.Order.ReportRequest parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.example.demo.Api.Grpc.Order.ReportRequest parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.example.demo.Api.Grpc.Order.ReportRequest parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.example.demo.Api.Grpc.Order.ReportRequest parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.example.demo.Api.Grpc.Order.ReportRequest parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.example.demo.Api.Grpc.Order.ReportRequest parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.example.demo.Api.Grpc.Order.ReportRequest prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
     /**
      * Protobuf type {@code ReportRequest}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:ReportRequest)
-        com.example.demo.Api.Grpc.Order.ReportRequestOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.example.demo.Api.Grpc.Order.internal_static_ReportRequest_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.example.demo.Api.Grpc.Order.internal_static_ReportRequest_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.example.demo.Api.Grpc.Order.ReportRequest.class, com.example.demo.Api.Grpc.Order.ReportRequest.Builder.class);
-      }
-
-      // Construct using com.example.demo.Api.Grpc.Order.ReportRequest.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        id_ = "";
-
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.example.demo.Api.Grpc.Order.internal_static_ReportRequest_descriptor;
-      }
-
-      @java.lang.Override
-      public com.example.demo.Api.Grpc.Order.ReportRequest getDefaultInstanceForType() {
-        return com.example.demo.Api.Grpc.Order.ReportRequest.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public com.example.demo.Api.Grpc.Order.ReportRequest build() {
-        com.example.demo.Api.Grpc.Order.ReportRequest result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public com.example.demo.Api.Grpc.Order.ReportRequest buildPartial() {
-        com.example.demo.Api.Grpc.Order.ReportRequest result = new com.example.demo.Api.Grpc.Order.ReportRequest(this);
-        result.id_ = id_;
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.example.demo.Api.Grpc.Order.ReportRequest) {
-          return mergeFrom((com.example.demo.Api.Grpc.Order.ReportRequest)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.example.demo.Api.Grpc.Order.ReportRequest other) {
-        if (other == com.example.demo.Api.Grpc.Order.ReportRequest.getDefaultInstance()) return this;
-        if (!other.getId().isEmpty()) {
-          id_ = other.id_;
-          onChanged();
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.example.demo.Api.Grpc.Order.ReportRequest parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.example.demo.Api.Grpc.Order.ReportRequest) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private java.lang.Object id_ = "";
-      /**
-       * <code>string id = 1;</code>
-       */
-      public java.lang.String getId() {
-        java.lang.Object ref = id_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          id_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string id = 1;</code>
-       */
-      public com.google.protobuf.ByteString
-          getIdBytes() {
-        java.lang.Object ref = id_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          id_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string id = 1;</code>
-       */
-      public Builder setId(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        id_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string id = 1;</code>
-       */
-      public Builder clearId() {
-        
-        id_ = getDefaultInstance().getId();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string id = 1;</code>
-       */
-      public Builder setIdBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        id_ = value;
-        onChanged();
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:ReportRequest)
-    }
-
-    // @@protoc_insertion_point(class_scope:ReportRequest)
-    private static final com.example.demo.Api.Grpc.Order.ReportRequest DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.example.demo.Api.Grpc.Order.ReportRequest();
-    }
-
-    public static com.example.demo.Api.Grpc.Order.ReportRequest getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<ReportRequest>
-        PARSER = new com.google.protobuf.AbstractParser<ReportRequest>() {
-      @java.lang.Override
-      public ReportRequest parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ReportRequest(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<ReportRequest> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<ReportRequest> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.example.demo.Api.Grpc.Order.ReportRequest getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface OrderResponseOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:OrderResponse)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>string orderId = 1;</code>
-     */
-    java.lang.String getOrderId();
-    /**
-     * <code>string orderId = 1;</code>
-     */
-    com.google.protobuf.ByteString
-        getOrderIdBytes();
-
-    /**
-     * <code>int32 amountOfPassengers = 2;</code>
-     */
-    int getAmountOfPassengers();
-
-    /**
-     * <code>double distance = 3;</code>
-     */
-    double getDistance();
-
-    /**
-     * <code>string clientId = 4;</code>
-     */
-    java.lang.String getClientId();
-    /**
-     * <code>string clientId = 4;</code>
-     */
-    com.google.protobuf.ByteString
-        getClientIdBytes();
-
-    /**
-     * <code>string driverId = 5;</code>
-     */
-    java.lang.String getDriverId();
-    /**
-     * <code>string driverId = 5;</code>
-     */
-    com.google.protobuf.ByteString
-        getDriverIdBytes();
-
-    /**
-     * <code>string carId = 6;</code>
-     */
-    java.lang.String getCarId();
-    /**
-     * <code>string carId = 6;</code>
-     */
-    com.google.protobuf.ByteString
-        getCarIdBytes();
-
-    /**
-     * <code>string status = 7;</code>
-     */
-    java.lang.String getStatus();
-    /**
-     * <code>string status = 7;</code>
-     */
-    com.google.protobuf.ByteString
-        getStatusBytes();
-  }
-  /**
-   * Protobuf type {@code OrderResponse}
-   */
-  public  static final class OrderResponse extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:OrderResponse)
-      OrderResponseOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use OrderResponse.newBuilder() to construct.
-    private OrderResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private OrderResponse() {
-      orderId_ = "";
-      amountOfPassengers_ = 0;
-      distance_ = 0D;
-      clientId_ = "";
-      driverId_ = "";
-      carId_ = "";
-      status_ = "";
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private OrderResponse(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              orderId_ = s;
-              break;
+    public static final class ReportRequest extends
+            com.google.protobuf.GeneratedMessageV3 implements
+            // @@protoc_insertion_point(message_implements:ReportRequest)
+            ReportRequestOrBuilder {
+        public static final int ID_FIELD_NUMBER = 1;
+        private static final long serialVersionUID = 0L;
+        // @@protoc_insertion_point(class_scope:ReportRequest)
+        private static final com.example.demo.Api.Grpc.Order.ReportRequest DEFAULT_INSTANCE;
+        private static final com.google.protobuf.Parser<ReportRequest>
+                PARSER = new com.google.protobuf.AbstractParser<ReportRequest>() {
+            @java.lang.Override
+            public ReportRequest parsePartialFrom(
+                    com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws com.google.protobuf.InvalidProtocolBufferException {
+                return new ReportRequest(input, extensionRegistry);
             }
-            case 16: {
+        };
 
-              amountOfPassengers_ = input.readInt32();
-              break;
-            }
-            case 25: {
-
-              distance_ = input.readDouble();
-              break;
-            }
-            case 34: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              clientId_ = s;
-              break;
-            }
-            case 42: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              driverId_ = s;
-              break;
-            }
-            case 50: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              carId_ = s;
-              break;
-            }
-            case 58: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              status_ = s;
-              break;
-            }
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
+        static {
+            DEFAULT_INSTANCE = new com.example.demo.Api.Grpc.Order.ReportRequest();
         }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
+
+        private volatile java.lang.Object id_;
+        private byte memoizedIsInitialized = -1;
+
+        // Use ReportRequest.newBuilder() to construct.
+        private ReportRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+            super(builder);
+        }
+        private ReportRequest() {
+            id_ = "";
+        }
+
+        private ReportRequest(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            this();
+            if (extensionRegistry == null) {
+                throw new java.lang.NullPointerException();
+            }
+            int mutable_bitField0_ = 0;
+            com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+                    com.google.protobuf.UnknownFieldSet.newBuilder();
+            try {
+                boolean done = false;
+                while (!done) {
+                    int tag = input.readTag();
+                    switch (tag) {
+                        case 0:
+                            done = true;
+                            break;
+                        case 10: {
+                            java.lang.String s = input.readStringRequireUtf8();
+
+                            id_ = s;
+                            break;
+                        }
+                        default: {
+                            if (!parseUnknownFieldProto3(
+                                    input, unknownFields, extensionRegistry, tag)) {
+                                done = true;
+                            }
+                            break;
+                        }
+                    }
+                }
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(this);
+            } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(
+                        e).setUnfinishedMessage(this);
+            } finally {
+                this.unknownFields = unknownFields.build();
+                makeExtensionsImmutable();
+            }
+        }
+
+        public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.example.demo.Api.Grpc.Order.internal_static_OrderResponse_descriptor;
-    }
+            return com.example.demo.Api.Grpc.Order.internal_static_ReportRequest_descriptor;
+        }
 
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        public static com.example.demo.Api.Grpc.Order.ReportRequest parseFrom(
+                java.nio.ByteBuffer data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static com.example.demo.Api.Grpc.Order.ReportRequest parseFrom(
+                java.nio.ByteBuffer data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.example.demo.Api.Grpc.Order.ReportRequest parseFrom(
+                com.google.protobuf.ByteString data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static com.example.demo.Api.Grpc.Order.ReportRequest parseFrom(
+                com.google.protobuf.ByteString data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.example.demo.Api.Grpc.Order.ReportRequest parseFrom(byte[] data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static com.example.demo.Api.Grpc.Order.ReportRequest parseFrom(
+                byte[] data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.example.demo.Api.Grpc.Order.ReportRequest parseFrom(java.io.InputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input);
+        }
+
+        public static com.example.demo.Api.Grpc.Order.ReportRequest parseFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static com.example.demo.Api.Grpc.Order.ReportRequest parseDelimitedFrom(java.io.InputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseDelimitedWithIOException(PARSER, input);
+        }
+
+        public static com.example.demo.Api.Grpc.Order.ReportRequest parseDelimitedFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static com.example.demo.Api.Grpc.Order.ReportRequest parseFrom(
+                com.google.protobuf.CodedInputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input);
+        }
+
+        public static com.example.demo.Api.Grpc.Order.ReportRequest parseFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static Builder newBuilder() {
+            return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(com.example.demo.Api.Grpc.Order.ReportRequest prototype) {
+            return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        public static com.example.demo.Api.Grpc.Order.ReportRequest getDefaultInstance() {
+            return DEFAULT_INSTANCE;
+        }
+
+        public static com.google.protobuf.Parser<ReportRequest> parser() {
+            return PARSER;
+        }
+
+        @java.lang.Override
+        public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+            return this.unknownFields;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.example.demo.Api.Grpc.Order.internal_static_OrderResponse_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.example.demo.Api.Grpc.Order.OrderResponse.class, com.example.demo.Api.Grpc.Order.OrderResponse.Builder.class);
+            return com.example.demo.Api.Grpc.Order.internal_static_ReportRequest_fieldAccessorTable
+                    .ensureFieldAccessorsInitialized(
+                            com.example.demo.Api.Grpc.Order.ReportRequest.class, com.example.demo.Api.Grpc.Order.ReportRequest.Builder.class);
+        }
+
+        /**
+         * <code>string id = 1;</code>
+         */
+        public java.lang.String getId() {
+            java.lang.Object ref = id_;
+            if (ref instanceof java.lang.String) {
+                return (java.lang.String) ref;
+            } else {
+                com.google.protobuf.ByteString bs =
+                        (com.google.protobuf.ByteString) ref;
+                java.lang.String s = bs.toStringUtf8();
+                id_ = s;
+                return s;
+            }
+        }
+
+        /**
+         * <code>string id = 1;</code>
+         */
+        public com.google.protobuf.ByteString
+        getIdBytes() {
+            java.lang.Object ref = id_;
+            if (ref instanceof java.lang.String) {
+                com.google.protobuf.ByteString b =
+                        com.google.protobuf.ByteString.copyFromUtf8(
+                                (java.lang.String) ref);
+                id_ = b;
+                return b;
+            } else {
+                return (com.google.protobuf.ByteString) ref;
+            }
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+            byte isInitialized = memoizedIsInitialized;
+            if (isInitialized == 1) return true;
+            if (isInitialized == 0) return false;
+
+            memoizedIsInitialized = 1;
+            return true;
+        }
+
+        @java.lang.Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+                throws java.io.IOException {
+            if (!getIdBytes().isEmpty()) {
+                com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
+            }
+            unknownFields.writeTo(output);
+        }
+
+        @java.lang.Override
+        public int getSerializedSize() {
+            int size = memoizedSize;
+            if (size != -1) return size;
+
+            size = 0;
+            if (!getIdBytes().isEmpty()) {
+                size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
+            }
+            size += unknownFields.getSerializedSize();
+            memoizedSize = size;
+            return size;
+        }
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+            if (obj == this) {
+                return true;
+            }
+            if (!(obj instanceof com.example.demo.Api.Grpc.Order.ReportRequest)) {
+                return super.equals(obj);
+            }
+            com.example.demo.Api.Grpc.Order.ReportRequest other = (com.example.demo.Api.Grpc.Order.ReportRequest) obj;
+
+            boolean result = true;
+            result = result && getId()
+                    .equals(other.getId());
+            result = result && unknownFields.equals(other.unknownFields);
+            return result;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+            if (memoizedHashCode != 0) {
+                return memoizedHashCode;
+            }
+            int hash = 41;
+            hash = (19 * hash) + getDescriptor().hashCode();
+            hash = (37 * hash) + ID_FIELD_NUMBER;
+            hash = (53 * hash) + getId().hashCode();
+            hash = (29 * hash) + unknownFields.hashCode();
+            memoizedHashCode = hash;
+            return hash;
+        }
+
+        @java.lang.Override
+        public Builder newBuilderForType() {
+            return newBuilder();
+        }
+
+        @java.lang.Override
+        public Builder toBuilder() {
+            return this == DEFAULT_INSTANCE
+                    ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(
+                com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            Builder builder = new Builder(parent);
+            return builder;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<ReportRequest> getParserForType() {
+            return PARSER;
+        }
+
+        @java.lang.Override
+        public com.example.demo.Api.Grpc.Order.ReportRequest getDefaultInstanceForType() {
+            return DEFAULT_INSTANCE;
+        }
+
+        /**
+         * Protobuf type {@code ReportRequest}
+         */
+        public static final class Builder extends
+                com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+                // @@protoc_insertion_point(builder_implements:ReportRequest)
+                com.example.demo.Api.Grpc.Order.ReportRequestOrBuilder {
+            private java.lang.Object id_ = "";
+
+            // Construct using com.example.demo.Api.Grpc.Order.ReportRequest.newBuilder()
+            private Builder() {
+                maybeForceBuilderInitialization();
+            }
+
+            private Builder(
+                    com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+                super(parent);
+                maybeForceBuilderInitialization();
+            }
+
+            public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+                return com.example.demo.Api.Grpc.Order.internal_static_ReportRequest_descriptor;
+            }
+
+            @java.lang.Override
+            protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+                return com.example.demo.Api.Grpc.Order.internal_static_ReportRequest_fieldAccessorTable
+                        .ensureFieldAccessorsInitialized(
+                                com.example.demo.Api.Grpc.Order.ReportRequest.class, com.example.demo.Api.Grpc.Order.ReportRequest.Builder.class);
+            }
+
+            private void maybeForceBuilderInitialization() {
+                if (com.google.protobuf.GeneratedMessageV3
+                        .alwaysUseFieldBuilders) {
+                }
+            }
+
+            @java.lang.Override
+            public Builder clear() {
+                super.clear();
+                id_ = "";
+
+                return this;
+            }
+
+            @java.lang.Override
+            public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+                return com.example.demo.Api.Grpc.Order.internal_static_ReportRequest_descriptor;
+            }
+
+            @java.lang.Override
+            public com.example.demo.Api.Grpc.Order.ReportRequest getDefaultInstanceForType() {
+                return com.example.demo.Api.Grpc.Order.ReportRequest.getDefaultInstance();
+            }
+
+            @java.lang.Override
+            public com.example.demo.Api.Grpc.Order.ReportRequest build() {
+                com.example.demo.Api.Grpc.Order.ReportRequest result = buildPartial();
+                if (!result.isInitialized()) {
+                    throw newUninitializedMessageException(result);
+                }
+                return result;
+            }
+
+            @java.lang.Override
+            public com.example.demo.Api.Grpc.Order.ReportRequest buildPartial() {
+                com.example.demo.Api.Grpc.Order.ReportRequest result = new com.example.demo.Api.Grpc.Order.ReportRequest(this);
+                result.id_ = id_;
+                onBuilt();
+                return result;
+            }
+
+            @java.lang.Override
+            public Builder clone() {
+                return super.clone();
+            }
+
+            @java.lang.Override
+            public Builder setField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    java.lang.Object value) {
+                return super.setField(field, value);
+            }
+
+            @java.lang.Override
+            public Builder clearField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field) {
+                return super.clearField(field);
+            }
+
+            @java.lang.Override
+            public Builder clearOneof(
+                    com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+                return super.clearOneof(oneof);
+            }
+
+            @java.lang.Override
+            public Builder setRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    int index, java.lang.Object value) {
+                return super.setRepeatedField(field, index, value);
+            }
+
+            @java.lang.Override
+            public Builder addRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    java.lang.Object value) {
+                return super.addRepeatedField(field, value);
+            }
+
+            @java.lang.Override
+            public Builder mergeFrom(com.google.protobuf.Message other) {
+                if (other instanceof com.example.demo.Api.Grpc.Order.ReportRequest) {
+                    return mergeFrom((com.example.demo.Api.Grpc.Order.ReportRequest) other);
+                } else {
+                    super.mergeFrom(other);
+                    return this;
+                }
+            }
+
+            public Builder mergeFrom(com.example.demo.Api.Grpc.Order.ReportRequest other) {
+                if (other == com.example.demo.Api.Grpc.Order.ReportRequest.getDefaultInstance()) return this;
+                if (!other.getId().isEmpty()) {
+                    id_ = other.id_;
+                    onChanged();
+                }
+                this.mergeUnknownFields(other.unknownFields);
+                onChanged();
+                return this;
+            }
+
+            @java.lang.Override
+            public final boolean isInitialized() {
+                return true;
+            }
+
+            @java.lang.Override
+            public Builder mergeFrom(
+                    com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws java.io.IOException {
+                com.example.demo.Api.Grpc.Order.ReportRequest parsedMessage = null;
+                try {
+                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                    parsedMessage = (com.example.demo.Api.Grpc.Order.ReportRequest) e.getUnfinishedMessage();
+                    throw e.unwrapIOException();
+                } finally {
+                    if (parsedMessage != null) {
+                        mergeFrom(parsedMessage);
+                    }
+                }
+                return this;
+            }
+
+            /**
+             * <code>string id = 1;</code>
+             */
+            public java.lang.String getId() {
+                java.lang.Object ref = id_;
+                if (!(ref instanceof java.lang.String)) {
+                    com.google.protobuf.ByteString bs =
+                            (com.google.protobuf.ByteString) ref;
+                    java.lang.String s = bs.toStringUtf8();
+                    id_ = s;
+                    return s;
+                } else {
+                    return (java.lang.String) ref;
+                }
+            }
+
+            /**
+             * <code>string id = 1;</code>
+             */
+            public Builder setId(
+                    java.lang.String value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+
+                id_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>string id = 1;</code>
+             */
+            public com.google.protobuf.ByteString
+            getIdBytes() {
+                java.lang.Object ref = id_;
+                if (ref instanceof String) {
+                    com.google.protobuf.ByteString b =
+                            com.google.protobuf.ByteString.copyFromUtf8(
+                                    (java.lang.String) ref);
+                    id_ = b;
+                    return b;
+                } else {
+                    return (com.google.protobuf.ByteString) ref;
+                }
+            }
+
+            /**
+             * <code>string id = 1;</code>
+             */
+            public Builder setIdBytes(
+                    com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                checkByteStringIsUtf8(value);
+
+                id_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>string id = 1;</code>
+             */
+            public Builder clearId() {
+
+                id_ = getDefaultInstance().getId();
+                onChanged();
+                return this;
+            }
+
+            @java.lang.Override
+            public final Builder setUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return super.setUnknownFieldsProto3(unknownFields);
+            }
+
+            @java.lang.Override
+            public final Builder mergeUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return super.mergeUnknownFields(unknownFields);
+            }
+
+
+            // @@protoc_insertion_point(builder_scope:ReportRequest)
+        }
+
     }
 
-    public static final int ORDERID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object orderId_;
-    /**
-     * <code>string orderId = 1;</code>
-     */
-    public java.lang.String getOrderId() {
-      java.lang.Object ref = orderId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        orderId_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string orderId = 1;</code>
-     */
-    public com.google.protobuf.ByteString
-        getOrderIdBytes() {
-      java.lang.Object ref = orderId_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        orderId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int AMOUNTOFPASSENGERS_FIELD_NUMBER = 2;
-    private int amountOfPassengers_;
-    /**
-     * <code>int32 amountOfPassengers = 2;</code>
-     */
-    public int getAmountOfPassengers() {
-      return amountOfPassengers_;
-    }
-
-    public static final int DISTANCE_FIELD_NUMBER = 3;
-    private double distance_;
-    /**
-     * <code>double distance = 3;</code>
-     */
-    public double getDistance() {
-      return distance_;
-    }
-
-    public static final int CLIENTID_FIELD_NUMBER = 4;
-    private volatile java.lang.Object clientId_;
-    /**
-     * <code>string clientId = 4;</code>
-     */
-    public java.lang.String getClientId() {
-      java.lang.Object ref = clientId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        clientId_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string clientId = 4;</code>
-     */
-    public com.google.protobuf.ByteString
-        getClientIdBytes() {
-      java.lang.Object ref = clientId_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        clientId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int DRIVERID_FIELD_NUMBER = 5;
-    private volatile java.lang.Object driverId_;
-    /**
-     * <code>string driverId = 5;</code>
-     */
-    public java.lang.String getDriverId() {
-      java.lang.Object ref = driverId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        driverId_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string driverId = 5;</code>
-     */
-    public com.google.protobuf.ByteString
-        getDriverIdBytes() {
-      java.lang.Object ref = driverId_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        driverId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int CARID_FIELD_NUMBER = 6;
-    private volatile java.lang.Object carId_;
-    /**
-     * <code>string carId = 6;</code>
-     */
-    public java.lang.String getCarId() {
-      java.lang.Object ref = carId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        carId_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string carId = 6;</code>
-     */
-    public com.google.protobuf.ByteString
-        getCarIdBytes() {
-      java.lang.Object ref = carId_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        carId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int STATUS_FIELD_NUMBER = 7;
-    private volatile java.lang.Object status_;
-    /**
-     * <code>string status = 7;</code>
-     */
-    public java.lang.String getStatus() {
-      java.lang.Object ref = status_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        status_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string status = 7;</code>
-     */
-    public com.google.protobuf.ByteString
-        getStatusBytes() {
-      java.lang.Object ref = status_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        status_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (!getOrderIdBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, orderId_);
-      }
-      if (amountOfPassengers_ != 0) {
-        output.writeInt32(2, amountOfPassengers_);
-      }
-      if (distance_ != 0D) {
-        output.writeDouble(3, distance_);
-      }
-      if (!getClientIdBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, clientId_);
-      }
-      if (!getDriverIdBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, driverId_);
-      }
-      if (!getCarIdBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, carId_);
-      }
-      if (!getStatusBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, status_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (!getOrderIdBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, orderId_);
-      }
-      if (amountOfPassengers_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(2, amountOfPassengers_);
-      }
-      if (distance_ != 0D) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(3, distance_);
-      }
-      if (!getClientIdBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, clientId_);
-      }
-      if (!getDriverIdBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, driverId_);
-      }
-      if (!getCarIdBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, carId_);
-      }
-      if (!getStatusBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, status_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.example.demo.Api.Grpc.Order.OrderResponse)) {
-        return super.equals(obj);
-      }
-      com.example.demo.Api.Grpc.Order.OrderResponse other = (com.example.demo.Api.Grpc.Order.OrderResponse) obj;
-
-      boolean result = true;
-      result = result && getOrderId()
-          .equals(other.getOrderId());
-      result = result && (getAmountOfPassengers()
-          == other.getAmountOfPassengers());
-      result = result && (
-          java.lang.Double.doubleToLongBits(getDistance())
-          == java.lang.Double.doubleToLongBits(
-              other.getDistance()));
-      result = result && getClientId()
-          .equals(other.getClientId());
-      result = result && getDriverId()
-          .equals(other.getDriverId());
-      result = result && getCarId()
-          .equals(other.getCarId());
-      result = result && getStatus()
-          .equals(other.getStatus());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + ORDERID_FIELD_NUMBER;
-      hash = (53 * hash) + getOrderId().hashCode();
-      hash = (37 * hash) + AMOUNTOFPASSENGERS_FIELD_NUMBER;
-      hash = (53 * hash) + getAmountOfPassengers();
-      hash = (37 * hash) + DISTANCE_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          java.lang.Double.doubleToLongBits(getDistance()));
-      hash = (37 * hash) + CLIENTID_FIELD_NUMBER;
-      hash = (53 * hash) + getClientId().hashCode();
-      hash = (37 * hash) + DRIVERID_FIELD_NUMBER;
-      hash = (53 * hash) + getDriverId().hashCode();
-      hash = (37 * hash) + CARID_FIELD_NUMBER;
-      hash = (53 * hash) + getCarId().hashCode();
-      hash = (37 * hash) + STATUS_FIELD_NUMBER;
-      hash = (53 * hash) + getStatus().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.example.demo.Api.Grpc.Order.OrderResponse parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.example.demo.Api.Grpc.Order.OrderResponse parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.example.demo.Api.Grpc.Order.OrderResponse parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.example.demo.Api.Grpc.Order.OrderResponse parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.example.demo.Api.Grpc.Order.OrderResponse parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.example.demo.Api.Grpc.Order.OrderResponse parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.example.demo.Api.Grpc.Order.OrderResponse parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.example.demo.Api.Grpc.Order.OrderResponse parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.example.demo.Api.Grpc.Order.OrderResponse parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.example.demo.Api.Grpc.Order.OrderResponse parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.example.demo.Api.Grpc.Order.OrderResponse parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.example.demo.Api.Grpc.Order.OrderResponse parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.example.demo.Api.Grpc.Order.OrderResponse prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
     /**
      * Protobuf type {@code OrderResponse}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:OrderResponse)
-        com.example.demo.Api.Grpc.Order.OrderResponseOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.example.demo.Api.Grpc.Order.internal_static_OrderResponse_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.example.demo.Api.Grpc.Order.internal_static_OrderResponse_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.example.demo.Api.Grpc.Order.OrderResponse.class, com.example.demo.Api.Grpc.Order.OrderResponse.Builder.class);
-      }
-
-      // Construct using com.example.demo.Api.Grpc.Order.OrderResponse.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        orderId_ = "";
-
-        amountOfPassengers_ = 0;
-
-        distance_ = 0D;
-
-        clientId_ = "";
-
-        driverId_ = "";
-
-        carId_ = "";
-
-        status_ = "";
-
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.example.demo.Api.Grpc.Order.internal_static_OrderResponse_descriptor;
-      }
-
-      @java.lang.Override
-      public com.example.demo.Api.Grpc.Order.OrderResponse getDefaultInstanceForType() {
-        return com.example.demo.Api.Grpc.Order.OrderResponse.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public com.example.demo.Api.Grpc.Order.OrderResponse build() {
-        com.example.demo.Api.Grpc.Order.OrderResponse result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public com.example.demo.Api.Grpc.Order.OrderResponse buildPartial() {
-        com.example.demo.Api.Grpc.Order.OrderResponse result = new com.example.demo.Api.Grpc.Order.OrderResponse(this);
-        result.orderId_ = orderId_;
-        result.amountOfPassengers_ = amountOfPassengers_;
-        result.distance_ = distance_;
-        result.clientId_ = clientId_;
-        result.driverId_ = driverId_;
-        result.carId_ = carId_;
-        result.status_ = status_;
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.example.demo.Api.Grpc.Order.OrderResponse) {
-          return mergeFrom((com.example.demo.Api.Grpc.Order.OrderResponse)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.example.demo.Api.Grpc.Order.OrderResponse other) {
-        if (other == com.example.demo.Api.Grpc.Order.OrderResponse.getDefaultInstance()) return this;
-        if (!other.getOrderId().isEmpty()) {
-          orderId_ = other.orderId_;
-          onChanged();
-        }
-        if (other.getAmountOfPassengers() != 0) {
-          setAmountOfPassengers(other.getAmountOfPassengers());
-        }
-        if (other.getDistance() != 0D) {
-          setDistance(other.getDistance());
-        }
-        if (!other.getClientId().isEmpty()) {
-          clientId_ = other.clientId_;
-          onChanged();
-        }
-        if (!other.getDriverId().isEmpty()) {
-          driverId_ = other.driverId_;
-          onChanged();
-        }
-        if (!other.getCarId().isEmpty()) {
-          carId_ = other.carId_;
-          onChanged();
-        }
-        if (!other.getStatus().isEmpty()) {
-          status_ = other.status_;
-          onChanged();
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.example.demo.Api.Grpc.Order.OrderResponse parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.example.demo.Api.Grpc.Order.OrderResponse) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private java.lang.Object orderId_ = "";
-      /**
-       * <code>string orderId = 1;</code>
-       */
-      public java.lang.String getOrderId() {
-        java.lang.Object ref = orderId_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          orderId_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string orderId = 1;</code>
-       */
-      public com.google.protobuf.ByteString
-          getOrderIdBytes() {
-        java.lang.Object ref = orderId_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          orderId_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string orderId = 1;</code>
-       */
-      public Builder setOrderId(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        orderId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string orderId = 1;</code>
-       */
-      public Builder clearOrderId() {
-        
-        orderId_ = getDefaultInstance().getOrderId();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string orderId = 1;</code>
-       */
-      public Builder setOrderIdBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        orderId_ = value;
-        onChanged();
-        return this;
-      }
-
-      private int amountOfPassengers_ ;
-      /**
-       * <code>int32 amountOfPassengers = 2;</code>
-       */
-      public int getAmountOfPassengers() {
-        return amountOfPassengers_;
-      }
-      /**
-       * <code>int32 amountOfPassengers = 2;</code>
-       */
-      public Builder setAmountOfPassengers(int value) {
-        
-        amountOfPassengers_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int32 amountOfPassengers = 2;</code>
-       */
-      public Builder clearAmountOfPassengers() {
-        
-        amountOfPassengers_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private double distance_ ;
-      /**
-       * <code>double distance = 3;</code>
-       */
-      public double getDistance() {
-        return distance_;
-      }
-      /**
-       * <code>double distance = 3;</code>
-       */
-      public Builder setDistance(double value) {
-        
-        distance_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>double distance = 3;</code>
-       */
-      public Builder clearDistance() {
-        
-        distance_ = 0D;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object clientId_ = "";
-      /**
-       * <code>string clientId = 4;</code>
-       */
-      public java.lang.String getClientId() {
-        java.lang.Object ref = clientId_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          clientId_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string clientId = 4;</code>
-       */
-      public com.google.protobuf.ByteString
-          getClientIdBytes() {
-        java.lang.Object ref = clientId_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          clientId_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string clientId = 4;</code>
-       */
-      public Builder setClientId(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        clientId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string clientId = 4;</code>
-       */
-      public Builder clearClientId() {
-        
-        clientId_ = getDefaultInstance().getClientId();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string clientId = 4;</code>
-       */
-      public Builder setClientIdBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        clientId_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object driverId_ = "";
-      /**
-       * <code>string driverId = 5;</code>
-       */
-      public java.lang.String getDriverId() {
-        java.lang.Object ref = driverId_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          driverId_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string driverId = 5;</code>
-       */
-      public com.google.protobuf.ByteString
-          getDriverIdBytes() {
-        java.lang.Object ref = driverId_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          driverId_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string driverId = 5;</code>
-       */
-      public Builder setDriverId(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        driverId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string driverId = 5;</code>
-       */
-      public Builder clearDriverId() {
-        
-        driverId_ = getDefaultInstance().getDriverId();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string driverId = 5;</code>
-       */
-      public Builder setDriverIdBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        driverId_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object carId_ = "";
-      /**
-       * <code>string carId = 6;</code>
-       */
-      public java.lang.String getCarId() {
-        java.lang.Object ref = carId_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          carId_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string carId = 6;</code>
-       */
-      public com.google.protobuf.ByteString
-          getCarIdBytes() {
-        java.lang.Object ref = carId_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          carId_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string carId = 6;</code>
-       */
-      public Builder setCarId(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        carId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string carId = 6;</code>
-       */
-      public Builder clearCarId() {
-        
-        carId_ = getDefaultInstance().getCarId();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string carId = 6;</code>
-       */
-      public Builder setCarIdBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        carId_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object status_ = "";
-      /**
-       * <code>string status = 7;</code>
-       */
-      public java.lang.String getStatus() {
-        java.lang.Object ref = status_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          status_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string status = 7;</code>
-       */
-      public com.google.protobuf.ByteString
-          getStatusBytes() {
-        java.lang.Object ref = status_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          status_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string status = 7;</code>
-       */
-      public Builder setStatus(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        status_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string status = 7;</code>
-       */
-      public Builder clearStatus() {
-        
-        status_ = getDefaultInstance().getStatus();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string status = 7;</code>
-       */
-      public Builder setStatusBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        status_ = value;
-        onChanged();
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:OrderResponse)
-    }
-
-    // @@protoc_insertion_point(class_scope:OrderResponse)
-    private static final com.example.demo.Api.Grpc.Order.OrderResponse DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.example.demo.Api.Grpc.Order.OrderResponse();
-    }
-
-    public static com.example.demo.Api.Grpc.Order.OrderResponse getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<OrderResponse>
-        PARSER = new com.google.protobuf.AbstractParser<OrderResponse>() {
-      @java.lang.Override
-      public OrderResponse parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new OrderResponse(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<OrderResponse> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<OrderResponse> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.example.demo.Api.Grpc.Order.OrderResponse getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_CreateRequest_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_CreateRequest_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_CompleteRequest_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_CompleteRequest_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_ReportRequest_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_ReportRequest_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_OrderResponse_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_OrderResponse_fieldAccessorTable;
-
-  public static com.google.protobuf.Descriptors.FileDescriptor
-      getDescriptor() {
-    return descriptor;
-  }
-  private static  com.google.protobuf.Descriptors.FileDescriptor
-      descriptor;
-  static {
-    java.lang.String[] descriptorData = {
-      "\n\013Order.proto\"O\n\rCreateRequest\022\032\n\022amount" +
-      "OfPassengers\030\001 \001(\005\022\020\n\010distance\030\002 \001(\001\022\020\n\010" +
-      "clientId\030\003 \001(\t\"\035\n\017CompleteRequest\022\n\n\002id\030" +
-      "\001 \001(\t\"\033\n\rReportRequest\022\n\n\002id\030\001 \001(\t\"\221\001\n\rO" +
-      "rderResponse\022\017\n\007orderId\030\001 \001(\t\022\032\n\022amountO" +
-      "fPassengers\030\002 \001(\005\022\020\n\010distance\030\003 \001(\001\022\020\n\010c" +
-      "lientId\030\004 \001(\t\022\020\n\010driverId\030\005 \001(\t\022\r\n\005carId" +
-      "\030\006 \001(\t\022\016\n\006status\030\007 \001(\t2\220\001\n\014OrderService\022" +
-      "(\n\006create\022\016.CreateRequest\032\016.OrderRespons" +
-      "e\022,\n\010complete\022\020.CompleteRequest\032\016.OrderR" +
-      "esponse\022(\n\006report\022\016.ReportRequest\032\016.Orde" +
-      "rResponseB\033\n\031com.example.demo.Api.Grpcb\006" +
-      "proto3"
-    };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
+    public static final class OrderResponse extends
+            com.google.protobuf.GeneratedMessageV3 implements
+            // @@protoc_insertion_point(message_implements:OrderResponse)
+            OrderResponseOrBuilder {
+        public static final int ORDERID_FIELD_NUMBER = 1;
+        public static final int AMOUNTOFPASSENGERS_FIELD_NUMBER = 2;
+        public static final int DISTANCE_FIELD_NUMBER = 3;
+        public static final int CLIENTID_FIELD_NUMBER = 4;
+        public static final int DRIVERID_FIELD_NUMBER = 5;
+        public static final int CARID_FIELD_NUMBER = 6;
+        public static final int STATUS_FIELD_NUMBER = 7;
+        private static final long serialVersionUID = 0L;
+        // @@protoc_insertion_point(class_scope:OrderResponse)
+        private static final com.example.demo.Api.Grpc.Order.OrderResponse DEFAULT_INSTANCE;
+        private static final com.google.protobuf.Parser<OrderResponse>
+                PARSER = new com.google.protobuf.AbstractParser<OrderResponse>() {
+            @java.lang.Override
+            public OrderResponse parsePartialFrom(
+                    com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws com.google.protobuf.InvalidProtocolBufferException {
+                return new OrderResponse(input, extensionRegistry);
+            }
         };
-    com.google.protobuf.Descriptors.FileDescriptor
-      .internalBuildGeneratedFileFrom(descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
-        }, assigner);
-    internal_static_CreateRequest_descriptor =
-      getDescriptor().getMessageTypes().get(0);
-    internal_static_CreateRequest_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_CreateRequest_descriptor,
-        new java.lang.String[] { "AmountOfPassengers", "Distance", "ClientId", });
-    internal_static_CompleteRequest_descriptor =
-      getDescriptor().getMessageTypes().get(1);
-    internal_static_CompleteRequest_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_CompleteRequest_descriptor,
-        new java.lang.String[] { "Id", });
-    internal_static_ReportRequest_descriptor =
-      getDescriptor().getMessageTypes().get(2);
-    internal_static_ReportRequest_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_ReportRequest_descriptor,
-        new java.lang.String[] { "Id", });
-    internal_static_OrderResponse_descriptor =
-      getDescriptor().getMessageTypes().get(3);
-    internal_static_OrderResponse_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_OrderResponse_descriptor,
-        new java.lang.String[] { "OrderId", "AmountOfPassengers", "Distance", "ClientId", "DriverId", "CarId", "Status", });
-  }
 
-  // @@protoc_insertion_point(outer_class_scope)
+        static {
+            DEFAULT_INSTANCE = new com.example.demo.Api.Grpc.Order.OrderResponse();
+        }
+
+        private volatile java.lang.Object orderId_;
+        private int amountOfPassengers_;
+        private double distance_;
+        private volatile java.lang.Object clientId_;
+        private volatile java.lang.Object driverId_;
+        private volatile java.lang.Object carId_;
+        private volatile java.lang.Object status_;
+        private byte memoizedIsInitialized = -1;
+
+        // Use OrderResponse.newBuilder() to construct.
+        private OrderResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+            super(builder);
+        }
+
+        private OrderResponse() {
+            orderId_ = "";
+            amountOfPassengers_ = 0;
+            distance_ = 0D;
+            clientId_ = "";
+            driverId_ = "";
+            carId_ = "";
+            status_ = "";
+        }
+
+        private OrderResponse(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            this();
+            if (extensionRegistry == null) {
+                throw new java.lang.NullPointerException();
+            }
+            int mutable_bitField0_ = 0;
+            com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+                    com.google.protobuf.UnknownFieldSet.newBuilder();
+            try {
+                boolean done = false;
+                while (!done) {
+                    int tag = input.readTag();
+                    switch (tag) {
+                        case 0:
+                            done = true;
+                            break;
+                        case 10: {
+                            java.lang.String s = input.readStringRequireUtf8();
+
+                            orderId_ = s;
+                            break;
+                        }
+                        case 16: {
+
+                            amountOfPassengers_ = input.readInt32();
+                            break;
+                        }
+                        case 25: {
+
+                            distance_ = input.readDouble();
+                            break;
+                        }
+                        case 34: {
+                            java.lang.String s = input.readStringRequireUtf8();
+
+                            clientId_ = s;
+                            break;
+                        }
+                        case 42: {
+                            java.lang.String s = input.readStringRequireUtf8();
+
+                            driverId_ = s;
+                            break;
+                        }
+                        case 50: {
+                            java.lang.String s = input.readStringRequireUtf8();
+
+                            carId_ = s;
+                            break;
+                        }
+                        case 58: {
+                            java.lang.String s = input.readStringRequireUtf8();
+
+                            status_ = s;
+                            break;
+                        }
+                        default: {
+                            if (!parseUnknownFieldProto3(
+                                    input, unknownFields, extensionRegistry, tag)) {
+                                done = true;
+                            }
+                            break;
+                        }
+                    }
+                }
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(this);
+            } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(
+                        e).setUnfinishedMessage(this);
+            } finally {
+                this.unknownFields = unknownFields.build();
+                makeExtensionsImmutable();
+            }
+        }
+
+        public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+            return com.example.demo.Api.Grpc.Order.internal_static_OrderResponse_descriptor;
+        }
+
+        public static com.example.demo.Api.Grpc.Order.OrderResponse parseFrom(
+                java.nio.ByteBuffer data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static com.example.demo.Api.Grpc.Order.OrderResponse parseFrom(
+                java.nio.ByteBuffer data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.example.demo.Api.Grpc.Order.OrderResponse parseFrom(
+                com.google.protobuf.ByteString data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static com.example.demo.Api.Grpc.Order.OrderResponse parseFrom(
+                com.google.protobuf.ByteString data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.example.demo.Api.Grpc.Order.OrderResponse parseFrom(byte[] data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static com.example.demo.Api.Grpc.Order.OrderResponse parseFrom(
+                byte[] data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.example.demo.Api.Grpc.Order.OrderResponse parseFrom(java.io.InputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input);
+        }
+
+        public static com.example.demo.Api.Grpc.Order.OrderResponse parseFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static com.example.demo.Api.Grpc.Order.OrderResponse parseDelimitedFrom(java.io.InputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseDelimitedWithIOException(PARSER, input);
+        }
+
+        public static com.example.demo.Api.Grpc.Order.OrderResponse parseDelimitedFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static com.example.demo.Api.Grpc.Order.OrderResponse parseFrom(
+                com.google.protobuf.CodedInputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input);
+        }
+
+        public static com.example.demo.Api.Grpc.Order.OrderResponse parseFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static Builder newBuilder() {
+            return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(com.example.demo.Api.Grpc.Order.OrderResponse prototype) {
+            return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        public static com.example.demo.Api.Grpc.Order.OrderResponse getDefaultInstance() {
+            return DEFAULT_INSTANCE;
+        }
+
+        public static com.google.protobuf.Parser<OrderResponse> parser() {
+            return PARSER;
+        }
+
+        @java.lang.Override
+        public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+            return this.unknownFields;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+            return com.example.demo.Api.Grpc.Order.internal_static_OrderResponse_fieldAccessorTable
+                    .ensureFieldAccessorsInitialized(
+                            com.example.demo.Api.Grpc.Order.OrderResponse.class, com.example.demo.Api.Grpc.Order.OrderResponse.Builder.class);
+        }
+
+        /**
+         * <code>string orderId = 1;</code>
+         */
+        public java.lang.String getOrderId() {
+            java.lang.Object ref = orderId_;
+            if (ref instanceof java.lang.String) {
+                return (java.lang.String) ref;
+            } else {
+                com.google.protobuf.ByteString bs =
+                        (com.google.protobuf.ByteString) ref;
+                java.lang.String s = bs.toStringUtf8();
+                orderId_ = s;
+                return s;
+            }
+        }
+
+        /**
+         * <code>string orderId = 1;</code>
+         */
+        public com.google.protobuf.ByteString
+        getOrderIdBytes() {
+            java.lang.Object ref = orderId_;
+            if (ref instanceof java.lang.String) {
+                com.google.protobuf.ByteString b =
+                        com.google.protobuf.ByteString.copyFromUtf8(
+                                (java.lang.String) ref);
+                orderId_ = b;
+                return b;
+            } else {
+                return (com.google.protobuf.ByteString) ref;
+            }
+        }
+
+        /**
+         * <code>int32 amountOfPassengers = 2;</code>
+         */
+        public int getAmountOfPassengers() {
+            return amountOfPassengers_;
+        }
+
+        /**
+         * <code>double distance = 3;</code>
+         */
+        public double getDistance() {
+            return distance_;
+        }
+
+        /**
+         * <code>string clientId = 4;</code>
+         */
+        public java.lang.String getClientId() {
+            java.lang.Object ref = clientId_;
+            if (ref instanceof java.lang.String) {
+                return (java.lang.String) ref;
+            } else {
+                com.google.protobuf.ByteString bs =
+                        (com.google.protobuf.ByteString) ref;
+                java.lang.String s = bs.toStringUtf8();
+                clientId_ = s;
+                return s;
+            }
+        }
+
+        /**
+         * <code>string clientId = 4;</code>
+         */
+        public com.google.protobuf.ByteString
+        getClientIdBytes() {
+            java.lang.Object ref = clientId_;
+            if (ref instanceof java.lang.String) {
+                com.google.protobuf.ByteString b =
+                        com.google.protobuf.ByteString.copyFromUtf8(
+                                (java.lang.String) ref);
+                clientId_ = b;
+                return b;
+            } else {
+                return (com.google.protobuf.ByteString) ref;
+            }
+        }
+
+        /**
+         * <code>string driverId = 5;</code>
+         */
+        public java.lang.String getDriverId() {
+            java.lang.Object ref = driverId_;
+            if (ref instanceof java.lang.String) {
+                return (java.lang.String) ref;
+            } else {
+                com.google.protobuf.ByteString bs =
+                        (com.google.protobuf.ByteString) ref;
+                java.lang.String s = bs.toStringUtf8();
+                driverId_ = s;
+                return s;
+            }
+        }
+
+        /**
+         * <code>string driverId = 5;</code>
+         */
+        public com.google.protobuf.ByteString
+        getDriverIdBytes() {
+            java.lang.Object ref = driverId_;
+            if (ref instanceof java.lang.String) {
+                com.google.protobuf.ByteString b =
+                        com.google.protobuf.ByteString.copyFromUtf8(
+                                (java.lang.String) ref);
+                driverId_ = b;
+                return b;
+            } else {
+                return (com.google.protobuf.ByteString) ref;
+            }
+        }
+
+        /**
+         * <code>string carId = 6;</code>
+         */
+        public java.lang.String getCarId() {
+            java.lang.Object ref = carId_;
+            if (ref instanceof java.lang.String) {
+                return (java.lang.String) ref;
+            } else {
+                com.google.protobuf.ByteString bs =
+                        (com.google.protobuf.ByteString) ref;
+                java.lang.String s = bs.toStringUtf8();
+                carId_ = s;
+                return s;
+            }
+        }
+
+        /**
+         * <code>string carId = 6;</code>
+         */
+        public com.google.protobuf.ByteString
+        getCarIdBytes() {
+            java.lang.Object ref = carId_;
+            if (ref instanceof java.lang.String) {
+                com.google.protobuf.ByteString b =
+                        com.google.protobuf.ByteString.copyFromUtf8(
+                                (java.lang.String) ref);
+                carId_ = b;
+                return b;
+            } else {
+                return (com.google.protobuf.ByteString) ref;
+            }
+        }
+
+        /**
+         * <code>string status = 7;</code>
+         */
+        public java.lang.String getStatus() {
+            java.lang.Object ref = status_;
+            if (ref instanceof java.lang.String) {
+                return (java.lang.String) ref;
+            } else {
+                com.google.protobuf.ByteString bs =
+                        (com.google.protobuf.ByteString) ref;
+                java.lang.String s = bs.toStringUtf8();
+                status_ = s;
+                return s;
+            }
+        }
+
+        /**
+         * <code>string status = 7;</code>
+         */
+        public com.google.protobuf.ByteString
+        getStatusBytes() {
+            java.lang.Object ref = status_;
+            if (ref instanceof java.lang.String) {
+                com.google.protobuf.ByteString b =
+                        com.google.protobuf.ByteString.copyFromUtf8(
+                                (java.lang.String) ref);
+                status_ = b;
+                return b;
+            } else {
+                return (com.google.protobuf.ByteString) ref;
+            }
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+            byte isInitialized = memoizedIsInitialized;
+            if (isInitialized == 1) return true;
+            if (isInitialized == 0) return false;
+
+            memoizedIsInitialized = 1;
+            return true;
+        }
+
+        @java.lang.Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+                throws java.io.IOException {
+            if (!getOrderIdBytes().isEmpty()) {
+                com.google.protobuf.GeneratedMessageV3.writeString(output, 1, orderId_);
+            }
+            if (amountOfPassengers_ != 0) {
+                output.writeInt32(2, amountOfPassengers_);
+            }
+            if (distance_ != 0D) {
+                output.writeDouble(3, distance_);
+            }
+            if (!getClientIdBytes().isEmpty()) {
+                com.google.protobuf.GeneratedMessageV3.writeString(output, 4, clientId_);
+            }
+            if (!getDriverIdBytes().isEmpty()) {
+                com.google.protobuf.GeneratedMessageV3.writeString(output, 5, driverId_);
+            }
+            if (!getCarIdBytes().isEmpty()) {
+                com.google.protobuf.GeneratedMessageV3.writeString(output, 6, carId_);
+            }
+            if (!getStatusBytes().isEmpty()) {
+                com.google.protobuf.GeneratedMessageV3.writeString(output, 7, status_);
+            }
+            unknownFields.writeTo(output);
+        }
+
+        @java.lang.Override
+        public int getSerializedSize() {
+            int size = memoizedSize;
+            if (size != -1) return size;
+
+            size = 0;
+            if (!getOrderIdBytes().isEmpty()) {
+                size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, orderId_);
+            }
+            if (amountOfPassengers_ != 0) {
+                size += com.google.protobuf.CodedOutputStream
+                        .computeInt32Size(2, amountOfPassengers_);
+            }
+            if (distance_ != 0D) {
+                size += com.google.protobuf.CodedOutputStream
+                        .computeDoubleSize(3, distance_);
+            }
+            if (!getClientIdBytes().isEmpty()) {
+                size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, clientId_);
+            }
+            if (!getDriverIdBytes().isEmpty()) {
+                size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, driverId_);
+            }
+            if (!getCarIdBytes().isEmpty()) {
+                size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, carId_);
+            }
+            if (!getStatusBytes().isEmpty()) {
+                size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, status_);
+            }
+            size += unknownFields.getSerializedSize();
+            memoizedSize = size;
+            return size;
+        }
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+            if (obj == this) {
+                return true;
+            }
+            if (!(obj instanceof com.example.demo.Api.Grpc.Order.OrderResponse)) {
+                return super.equals(obj);
+            }
+            com.example.demo.Api.Grpc.Order.OrderResponse other = (com.example.demo.Api.Grpc.Order.OrderResponse) obj;
+
+            boolean result = true;
+            result = result && getOrderId()
+                    .equals(other.getOrderId());
+            result = result && (getAmountOfPassengers()
+                    == other.getAmountOfPassengers());
+            result = result && (
+                    java.lang.Double.doubleToLongBits(getDistance())
+                            == java.lang.Double.doubleToLongBits(
+                            other.getDistance()));
+            result = result && getClientId()
+                    .equals(other.getClientId());
+            result = result && getDriverId()
+                    .equals(other.getDriverId());
+            result = result && getCarId()
+                    .equals(other.getCarId());
+            result = result && getStatus()
+                    .equals(other.getStatus());
+            result = result && unknownFields.equals(other.unknownFields);
+            return result;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+            if (memoizedHashCode != 0) {
+                return memoizedHashCode;
+            }
+            int hash = 41;
+            hash = (19 * hash) + getDescriptor().hashCode();
+            hash = (37 * hash) + ORDERID_FIELD_NUMBER;
+            hash = (53 * hash) + getOrderId().hashCode();
+            hash = (37 * hash) + AMOUNTOFPASSENGERS_FIELD_NUMBER;
+            hash = (53 * hash) + getAmountOfPassengers();
+            hash = (37 * hash) + DISTANCE_FIELD_NUMBER;
+            hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+                    java.lang.Double.doubleToLongBits(getDistance()));
+            hash = (37 * hash) + CLIENTID_FIELD_NUMBER;
+            hash = (53 * hash) + getClientId().hashCode();
+            hash = (37 * hash) + DRIVERID_FIELD_NUMBER;
+            hash = (53 * hash) + getDriverId().hashCode();
+            hash = (37 * hash) + CARID_FIELD_NUMBER;
+            hash = (53 * hash) + getCarId().hashCode();
+            hash = (37 * hash) + STATUS_FIELD_NUMBER;
+            hash = (53 * hash) + getStatus().hashCode();
+            hash = (29 * hash) + unknownFields.hashCode();
+            memoizedHashCode = hash;
+            return hash;
+        }
+
+        @java.lang.Override
+        public Builder newBuilderForType() {
+            return newBuilder();
+        }
+
+        @java.lang.Override
+        public Builder toBuilder() {
+            return this == DEFAULT_INSTANCE
+                    ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(
+                com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            Builder builder = new Builder(parent);
+            return builder;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<OrderResponse> getParserForType() {
+            return PARSER;
+        }
+
+        @java.lang.Override
+        public com.example.demo.Api.Grpc.Order.OrderResponse getDefaultInstanceForType() {
+            return DEFAULT_INSTANCE;
+        }
+
+        /**
+         * Protobuf type {@code OrderResponse}
+         */
+        public static final class Builder extends
+                com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+                // @@protoc_insertion_point(builder_implements:OrderResponse)
+                com.example.demo.Api.Grpc.Order.OrderResponseOrBuilder {
+            private java.lang.Object orderId_ = "";
+            private int amountOfPassengers_;
+            private double distance_;
+            private java.lang.Object clientId_ = "";
+            private java.lang.Object driverId_ = "";
+            private java.lang.Object carId_ = "";
+            private java.lang.Object status_ = "";
+
+            // Construct using com.example.demo.Api.Grpc.Order.OrderResponse.newBuilder()
+            private Builder() {
+                maybeForceBuilderInitialization();
+            }
+
+            private Builder(
+                    com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+                super(parent);
+                maybeForceBuilderInitialization();
+            }
+
+            public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+                return com.example.demo.Api.Grpc.Order.internal_static_OrderResponse_descriptor;
+            }
+
+            @java.lang.Override
+            protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+                return com.example.demo.Api.Grpc.Order.internal_static_OrderResponse_fieldAccessorTable
+                        .ensureFieldAccessorsInitialized(
+                                com.example.demo.Api.Grpc.Order.OrderResponse.class, com.example.demo.Api.Grpc.Order.OrderResponse.Builder.class);
+            }
+
+            private void maybeForceBuilderInitialization() {
+                if (com.google.protobuf.GeneratedMessageV3
+                        .alwaysUseFieldBuilders) {
+                }
+            }
+
+            @java.lang.Override
+            public Builder clear() {
+                super.clear();
+                orderId_ = "";
+
+                amountOfPassengers_ = 0;
+
+                distance_ = 0D;
+
+                clientId_ = "";
+
+                driverId_ = "";
+
+                carId_ = "";
+
+                status_ = "";
+
+                return this;
+            }
+
+            @java.lang.Override
+            public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+                return com.example.demo.Api.Grpc.Order.internal_static_OrderResponse_descriptor;
+            }
+
+            @java.lang.Override
+            public com.example.demo.Api.Grpc.Order.OrderResponse getDefaultInstanceForType() {
+                return com.example.demo.Api.Grpc.Order.OrderResponse.getDefaultInstance();
+            }
+
+            @java.lang.Override
+            public com.example.demo.Api.Grpc.Order.OrderResponse build() {
+                com.example.demo.Api.Grpc.Order.OrderResponse result = buildPartial();
+                if (!result.isInitialized()) {
+                    throw newUninitializedMessageException(result);
+                }
+                return result;
+            }
+
+            @java.lang.Override
+            public com.example.demo.Api.Grpc.Order.OrderResponse buildPartial() {
+                com.example.demo.Api.Grpc.Order.OrderResponse result = new com.example.demo.Api.Grpc.Order.OrderResponse(this);
+                result.orderId_ = orderId_;
+                result.amountOfPassengers_ = amountOfPassengers_;
+                result.distance_ = distance_;
+                result.clientId_ = clientId_;
+                result.driverId_ = driverId_;
+                result.carId_ = carId_;
+                result.status_ = status_;
+                onBuilt();
+                return result;
+            }
+
+            @java.lang.Override
+            public Builder clone() {
+                return super.clone();
+            }
+
+            @java.lang.Override
+            public Builder setField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    java.lang.Object value) {
+                return super.setField(field, value);
+            }
+
+            @java.lang.Override
+            public Builder clearField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field) {
+                return super.clearField(field);
+            }
+
+            @java.lang.Override
+            public Builder clearOneof(
+                    com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+                return super.clearOneof(oneof);
+            }
+
+            @java.lang.Override
+            public Builder setRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    int index, java.lang.Object value) {
+                return super.setRepeatedField(field, index, value);
+            }
+
+            @java.lang.Override
+            public Builder addRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    java.lang.Object value) {
+                return super.addRepeatedField(field, value);
+            }
+
+            @java.lang.Override
+            public Builder mergeFrom(com.google.protobuf.Message other) {
+                if (other instanceof com.example.demo.Api.Grpc.Order.OrderResponse) {
+                    return mergeFrom((com.example.demo.Api.Grpc.Order.OrderResponse) other);
+                } else {
+                    super.mergeFrom(other);
+                    return this;
+                }
+            }
+
+            public Builder mergeFrom(com.example.demo.Api.Grpc.Order.OrderResponse other) {
+                if (other == com.example.demo.Api.Grpc.Order.OrderResponse.getDefaultInstance()) return this;
+                if (!other.getOrderId().isEmpty()) {
+                    orderId_ = other.orderId_;
+                    onChanged();
+                }
+                if (other.getAmountOfPassengers() != 0) {
+                    setAmountOfPassengers(other.getAmountOfPassengers());
+                }
+                if (other.getDistance() != 0D) {
+                    setDistance(other.getDistance());
+                }
+                if (!other.getClientId().isEmpty()) {
+                    clientId_ = other.clientId_;
+                    onChanged();
+                }
+                if (!other.getDriverId().isEmpty()) {
+                    driverId_ = other.driverId_;
+                    onChanged();
+                }
+                if (!other.getCarId().isEmpty()) {
+                    carId_ = other.carId_;
+                    onChanged();
+                }
+                if (!other.getStatus().isEmpty()) {
+                    status_ = other.status_;
+                    onChanged();
+                }
+                this.mergeUnknownFields(other.unknownFields);
+                onChanged();
+                return this;
+            }
+
+            @java.lang.Override
+            public final boolean isInitialized() {
+                return true;
+            }
+
+            @java.lang.Override
+            public Builder mergeFrom(
+                    com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws java.io.IOException {
+                com.example.demo.Api.Grpc.Order.OrderResponse parsedMessage = null;
+                try {
+                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                    parsedMessage = (com.example.demo.Api.Grpc.Order.OrderResponse) e.getUnfinishedMessage();
+                    throw e.unwrapIOException();
+                } finally {
+                    if (parsedMessage != null) {
+                        mergeFrom(parsedMessage);
+                    }
+                }
+                return this;
+            }
+
+            /**
+             * <code>string orderId = 1;</code>
+             */
+            public java.lang.String getOrderId() {
+                java.lang.Object ref = orderId_;
+                if (!(ref instanceof java.lang.String)) {
+                    com.google.protobuf.ByteString bs =
+                            (com.google.protobuf.ByteString) ref;
+                    java.lang.String s = bs.toStringUtf8();
+                    orderId_ = s;
+                    return s;
+                } else {
+                    return (java.lang.String) ref;
+                }
+            }
+
+            /**
+             * <code>string orderId = 1;</code>
+             */
+            public Builder setOrderId(
+                    java.lang.String value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+
+                orderId_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>string orderId = 1;</code>
+             */
+            public com.google.protobuf.ByteString
+            getOrderIdBytes() {
+                java.lang.Object ref = orderId_;
+                if (ref instanceof String) {
+                    com.google.protobuf.ByteString b =
+                            com.google.protobuf.ByteString.copyFromUtf8(
+                                    (java.lang.String) ref);
+                    orderId_ = b;
+                    return b;
+                } else {
+                    return (com.google.protobuf.ByteString) ref;
+                }
+            }
+
+            /**
+             * <code>string orderId = 1;</code>
+             */
+            public Builder setOrderIdBytes(
+                    com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                checkByteStringIsUtf8(value);
+
+                orderId_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>string orderId = 1;</code>
+             */
+            public Builder clearOrderId() {
+
+                orderId_ = getDefaultInstance().getOrderId();
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>int32 amountOfPassengers = 2;</code>
+             */
+            public int getAmountOfPassengers() {
+                return amountOfPassengers_;
+            }
+
+            /**
+             * <code>int32 amountOfPassengers = 2;</code>
+             */
+            public Builder setAmountOfPassengers(int value) {
+
+                amountOfPassengers_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>int32 amountOfPassengers = 2;</code>
+             */
+            public Builder clearAmountOfPassengers() {
+
+                amountOfPassengers_ = 0;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>double distance = 3;</code>
+             */
+            public double getDistance() {
+                return distance_;
+            }
+
+            /**
+             * <code>double distance = 3;</code>
+             */
+            public Builder setDistance(double value) {
+
+                distance_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>double distance = 3;</code>
+             */
+            public Builder clearDistance() {
+
+                distance_ = 0D;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>string clientId = 4;</code>
+             */
+            public java.lang.String getClientId() {
+                java.lang.Object ref = clientId_;
+                if (!(ref instanceof java.lang.String)) {
+                    com.google.protobuf.ByteString bs =
+                            (com.google.protobuf.ByteString) ref;
+                    java.lang.String s = bs.toStringUtf8();
+                    clientId_ = s;
+                    return s;
+                } else {
+                    return (java.lang.String) ref;
+                }
+            }
+
+            /**
+             * <code>string clientId = 4;</code>
+             */
+            public Builder setClientId(
+                    java.lang.String value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+
+                clientId_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>string clientId = 4;</code>
+             */
+            public com.google.protobuf.ByteString
+            getClientIdBytes() {
+                java.lang.Object ref = clientId_;
+                if (ref instanceof String) {
+                    com.google.protobuf.ByteString b =
+                            com.google.protobuf.ByteString.copyFromUtf8(
+                                    (java.lang.String) ref);
+                    clientId_ = b;
+                    return b;
+                } else {
+                    return (com.google.protobuf.ByteString) ref;
+                }
+            }
+
+            /**
+             * <code>string clientId = 4;</code>
+             */
+            public Builder setClientIdBytes(
+                    com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                checkByteStringIsUtf8(value);
+
+                clientId_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>string clientId = 4;</code>
+             */
+            public Builder clearClientId() {
+
+                clientId_ = getDefaultInstance().getClientId();
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>string driverId = 5;</code>
+             */
+            public java.lang.String getDriverId() {
+                java.lang.Object ref = driverId_;
+                if (!(ref instanceof java.lang.String)) {
+                    com.google.protobuf.ByteString bs =
+                            (com.google.protobuf.ByteString) ref;
+                    java.lang.String s = bs.toStringUtf8();
+                    driverId_ = s;
+                    return s;
+                } else {
+                    return (java.lang.String) ref;
+                }
+            }
+
+            /**
+             * <code>string driverId = 5;</code>
+             */
+            public Builder setDriverId(
+                    java.lang.String value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+
+                driverId_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>string driverId = 5;</code>
+             */
+            public com.google.protobuf.ByteString
+            getDriverIdBytes() {
+                java.lang.Object ref = driverId_;
+                if (ref instanceof String) {
+                    com.google.protobuf.ByteString b =
+                            com.google.protobuf.ByteString.copyFromUtf8(
+                                    (java.lang.String) ref);
+                    driverId_ = b;
+                    return b;
+                } else {
+                    return (com.google.protobuf.ByteString) ref;
+                }
+            }
+
+            /**
+             * <code>string driverId = 5;</code>
+             */
+            public Builder setDriverIdBytes(
+                    com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                checkByteStringIsUtf8(value);
+
+                driverId_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>string driverId = 5;</code>
+             */
+            public Builder clearDriverId() {
+
+                driverId_ = getDefaultInstance().getDriverId();
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>string carId = 6;</code>
+             */
+            public java.lang.String getCarId() {
+                java.lang.Object ref = carId_;
+                if (!(ref instanceof java.lang.String)) {
+                    com.google.protobuf.ByteString bs =
+                            (com.google.protobuf.ByteString) ref;
+                    java.lang.String s = bs.toStringUtf8();
+                    carId_ = s;
+                    return s;
+                } else {
+                    return (java.lang.String) ref;
+                }
+            }
+
+            /**
+             * <code>string carId = 6;</code>
+             */
+            public Builder setCarId(
+                    java.lang.String value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+
+                carId_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>string carId = 6;</code>
+             */
+            public com.google.protobuf.ByteString
+            getCarIdBytes() {
+                java.lang.Object ref = carId_;
+                if (ref instanceof String) {
+                    com.google.protobuf.ByteString b =
+                            com.google.protobuf.ByteString.copyFromUtf8(
+                                    (java.lang.String) ref);
+                    carId_ = b;
+                    return b;
+                } else {
+                    return (com.google.protobuf.ByteString) ref;
+                }
+            }
+
+            /**
+             * <code>string carId = 6;</code>
+             */
+            public Builder setCarIdBytes(
+                    com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                checkByteStringIsUtf8(value);
+
+                carId_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>string carId = 6;</code>
+             */
+            public Builder clearCarId() {
+
+                carId_ = getDefaultInstance().getCarId();
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>string status = 7;</code>
+             */
+            public java.lang.String getStatus() {
+                java.lang.Object ref = status_;
+                if (!(ref instanceof java.lang.String)) {
+                    com.google.protobuf.ByteString bs =
+                            (com.google.protobuf.ByteString) ref;
+                    java.lang.String s = bs.toStringUtf8();
+                    status_ = s;
+                    return s;
+                } else {
+                    return (java.lang.String) ref;
+                }
+            }
+
+            /**
+             * <code>string status = 7;</code>
+             */
+            public Builder setStatus(
+                    java.lang.String value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+
+                status_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>string status = 7;</code>
+             */
+            public com.google.protobuf.ByteString
+            getStatusBytes() {
+                java.lang.Object ref = status_;
+                if (ref instanceof String) {
+                    com.google.protobuf.ByteString b =
+                            com.google.protobuf.ByteString.copyFromUtf8(
+                                    (java.lang.String) ref);
+                    status_ = b;
+                    return b;
+                } else {
+                    return (com.google.protobuf.ByteString) ref;
+                }
+            }
+
+            /**
+             * <code>string status = 7;</code>
+             */
+            public Builder setStatusBytes(
+                    com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                checkByteStringIsUtf8(value);
+
+                status_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>string status = 7;</code>
+             */
+            public Builder clearStatus() {
+
+                status_ = getDefaultInstance().getStatus();
+                onChanged();
+                return this;
+            }
+
+            @java.lang.Override
+            public final Builder setUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return super.setUnknownFieldsProto3(unknownFields);
+            }
+
+            @java.lang.Override
+            public final Builder mergeUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return super.mergeUnknownFields(unknownFields);
+            }
+
+
+            // @@protoc_insertion_point(builder_scope:OrderResponse)
+        }
+
+    }
+
+    // @@protoc_insertion_point(outer_class_scope)
 }
