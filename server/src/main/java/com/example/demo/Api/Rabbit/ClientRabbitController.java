@@ -4,7 +4,9 @@ import com.example.demo.Api.Rabbit.clientDto.CreateInfo;
 import com.example.demo.Api.Rest.MappingModule;
 import com.example.demo.Services.MainClasses.ClientInfo.Client;
 import com.google.gson.Gson;
+import org.springframework.amqp.rabbit.connection.ConnectionFactory;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
@@ -18,11 +20,19 @@ import java.util.Objects;
 import java.util.UUID;
 
 @RestController
-@RequestMapping(value = "/client")
-public class ClientRestController {
-    private final RestTemplate template = new RestTemplate();
-    private final String address = "http://clientserver:8085/client/";
-    private final RabbitTemplate rabbitTemplate = new RabbitTemplate();
+@RequestMapping(value = "/client/rabbit")
+public class ClientRabbitController {
+    private final RestTemplate template;
+    private final String address;
+    private final RabbitTemplate rabbitTemplate;
+
+    @Autowired
+    public ClientRabbitController(ConnectionFactory connectionFactory) {
+        this.rabbitTemplate = new RabbitTemplate(connectionFactory);
+        this.address = "http://clientserver:8085/client/";
+        this.template = new RestTemplate();
+
+    }
 
     @PostMapping
     public ResponseEntity<Object> create(@RequestParam String name, @RequestParam double cash,
@@ -30,7 +40,7 @@ public class ClientRestController {
 
         CreateInfo info = new CreateInfo(name, cash, isVip);
         String request = new Gson().toJson(info);
-        Object response = rabbitTemplate.convertSendAndReceive("exchange", RabbitConfiguration.Client_Key_Create, request);
+        Object response = rabbitTemplate.convertSendAndReceive(RabbitConfiguration.EXCHANGE, RabbitConfiguration.Client_Key_Create, request);
         assert response != null;
         return ResponseEntity.ok(response);
     }

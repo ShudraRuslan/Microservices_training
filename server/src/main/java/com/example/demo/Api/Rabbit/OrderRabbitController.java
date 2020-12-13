@@ -11,7 +11,9 @@ import com.example.demo.Services.MainClasses.DriverInfo.DriverStatus;
 import com.example.demo.Services.MainClasses.OrderInfo.Order;
 import com.example.demo.Services.MainClasses.OrderInfo.OrderStatus;
 import com.google.gson.Gson;
+import org.springframework.amqp.rabbit.connection.ConnectionFactory;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
@@ -24,11 +26,18 @@ import java.util.List;
 import java.util.UUID;
 
 @RestController
-@RequestMapping(value = "/order")
-public class OrderRestController {
+@RequestMapping(value = "/order/rabbit")
+public class OrderRabbitController {
 
-    private final RestTemplate template = new RestTemplate();
-    private final RabbitTemplate rabbitTemplate = new RabbitTemplate();
+    private final RestTemplate template;
+    private final RabbitTemplate rabbitTemplate;
+
+    @Autowired
+    public OrderRabbitController(ConnectionFactory connectionFactory) {
+        this.rabbitTemplate = new RabbitTemplate(connectionFactory);
+        this.template = new RestTemplate();
+
+    }
 
 
     private Client getOrderClient(UUID clientId) {
@@ -81,7 +90,12 @@ public class OrderRestController {
                 queryParam("isVip", isVip);
         HttpEntity<Double> firstResponse = template.exchange(builder.toUriString(), HttpMethod.GET, null,
                 Double.class);
-        double payload = firstResponse.getBody();
+
+
+        double payload = 0;
+        if (firstResponse.getBody() != null) {
+            payload = firstResponse.getBody();
+        }
 
 
         Client cLient = getOrderClient(order.getClientId());
@@ -99,7 +113,7 @@ public class OrderRestController {
 
         UpdateInfo info = new UpdateInfo(carId, distance);
         String request = new Gson().toJson(info);
-        Object response = rabbitTemplate.convertSendAndReceive("exchange", RabbitConfiguration.Car_Key_Update, request);
+        Object response = rabbitTemplate.convertSendAndReceive(RabbitConfiguration.EXCHANGE, RabbitConfiguration.Car_Key_Update, request);
         assert response != null;
         return ResponseEntity.ok(response);
     }
@@ -109,7 +123,7 @@ public class OrderRestController {
         com.example.demo.Api.Rabbit.driverDto.UpdateInfo info =
                 new com.example.demo.Api.Rabbit.driverDto.UpdateInfo(driverId, distance);
         String request = new Gson().toJson(info);
-        Object response = rabbitTemplate.convertSendAndReceive("exchange", RabbitConfiguration.Driver_Key_Update, request);
+        Object response = rabbitTemplate.convertSendAndReceive(RabbitConfiguration.EXCHANGE, RabbitConfiguration.Driver_Key_Update, request);
         assert response != null;
         return ResponseEntity.ok(response);
     }
@@ -121,7 +135,7 @@ public class OrderRestController {
         com.example.demo.Api.Rabbit.cashierDto.UpdateInfo info =
                 new com.example.demo.Api.Rabbit.cashierDto.UpdateInfo(distance, carFuelConsumption, amountOfPassengers, driverSalary, carNeedsService, isVip);
         String request = new Gson().toJson(info);
-        Object response = rabbitTemplate.convertSendAndReceive("exchange", RabbitConfiguration.Cashier_Key_Update, request);
+        Object response = rabbitTemplate.convertSendAndReceive(RabbitConfiguration.EXCHANGE, RabbitConfiguration.Cashier_Key_Update, request);
         assert response != null;
         return ResponseEntity.ok(response);
     }
@@ -158,7 +172,7 @@ public class OrderRestController {
                 new ParameterizedTypeReference<>() {
                 });
         List<Order> list = response.getBody();
-        if (list.isEmpty())
+        if (list == null || list.isEmpty())
             return null;
         else
             return list.get(0);
@@ -212,7 +226,7 @@ public class OrderRestController {
         CreateInfo info =
                 new CreateInfo(amountOfPassengers, distance, clientId);
         String request = new Gson().toJson(info);
-        Object response = rabbitTemplate.convertSendAndReceive("exchange", RabbitConfiguration.Order_Key_Create, request);
+        Object response = rabbitTemplate.convertSendAndReceive(RabbitConfiguration.EXCHANGE, RabbitConfiguration.Order_Key_Create, request);
         assert response != null;
         return ResponseEntity.ok(response);
     }
@@ -229,7 +243,7 @@ public class OrderRestController {
         order.setCarId(car.getCarID());
         order.setDriverId(driver.getDriverId());
 
-        Object response = rabbitTemplate.convertSendAndReceive("exchange", RabbitConfiguration.Order_Key_Update, orderId.toString());
+        Object response = rabbitTemplate.convertSendAndReceive(RabbitConfiguration.EXCHANGE, RabbitConfiguration.Order_Key_Update, orderId.toString());
 
 
         Client client = getOrderClient(order.getClientId());

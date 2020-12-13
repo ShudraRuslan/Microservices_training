@@ -9,6 +9,7 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class RabbitConfiguration {
+    public static final String EXCHANGE = "exchange";
     public static final String Car_Key_Delete = "carDelete_routingKey";
     public static final String Car_Key_Create = "carCreate_routingKey";
     public static final String Car_Key_Update = "carUpdate_routingKey";

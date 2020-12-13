@@ -1,6 +1,8 @@
 package com.example.demo.Api.Rabbit;
 
+import org.springframework.amqp.rabbit.connection.ConnectionFactory;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
@@ -13,17 +15,25 @@ import org.springframework.web.client.RestTemplate;
 import java.util.Objects;
 
 @RestController
-@RequestMapping("/cashier")
-public class CashierRestController {
-    private final RestTemplate template = new RestTemplate();
-    private final String address = "http://cashierserver:8084/cashier/";
-    private final RabbitTemplate rabbitTemplate = new RabbitTemplate();
+@RequestMapping("/cashier/rabbit")
+public class CashierRabbitController {
+    private final RestTemplate template;
+    private final String address;
+    private final RabbitTemplate rabbitTemplate;
+
+    @Autowired
+    public CashierRabbitController(ConnectionFactory connectionFactory) {
+        this.rabbitTemplate = new RabbitTemplate(connectionFactory);
+        this.address = "http://cashierserver:8084/cashier/";
+        this.template = new RestTemplate();
+
+    }
 
 
     @PostMapping()
     public ResponseEntity<Object> create() {
 
-        Object response = rabbitTemplate.convertSendAndReceive("exchange", RabbitConfiguration.Cashier_Key_Create, "cash");
+        Object response = rabbitTemplate.convertSendAndReceive(RabbitConfiguration.EXCHANGE, RabbitConfiguration.Cashier_Key_Create, "cash");
         assert response != null;
         return ResponseEntity.ok(response);
     }

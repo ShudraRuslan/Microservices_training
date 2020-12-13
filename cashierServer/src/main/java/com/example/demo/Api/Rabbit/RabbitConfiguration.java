@@ -10,6 +10,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class RabbitConfiguration {
 
+    public static final String Exchange = "exchange";
     public static final String Cashier_Key_Create = "cashierCreate_routingKey";
     public static final String Cashier_Key_Update = "cashierUpdate_routingKey";
 
@@ -27,7 +28,7 @@ public class RabbitConfiguration {
 
     @Bean
     public TopicExchange exchange() {
-        return new TopicExchange("exchange");
+        return new TopicExchange(Exchange);
     }
 
     @Bean

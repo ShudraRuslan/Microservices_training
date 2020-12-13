@@ -8,7 +8,9 @@ import com.example.demo.Services.MainClasses.DriverInfo.Category;
 import com.example.demo.Services.MainClasses.DriverInfo.Driver;
 import com.example.demo.Services.MainClasses.DriverInfo.DriverStatus;
 import com.google.gson.Gson;
+import org.springframework.amqp.rabbit.connection.ConnectionFactory;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
@@ -22,12 +24,20 @@ import java.util.Objects;
 import java.util.UUID;
 
 @RestController
-@RequestMapping(value = "/personnel")
-public class PersonnelRestController {
+@RequestMapping(value = "/personnel/rabbit")
+public class PersonnelRabbitController {
 
-    private final RestTemplate template = new RestTemplate();
-    private final String address = "http://driverserver:8086/personnel/";
-    private final RabbitTemplate rabbitTemplate = new RabbitTemplate();
+    private final RestTemplate template;
+    private final String address;
+    private final RabbitTemplate rabbitTemplate;
+
+    @Autowired
+    public PersonnelRabbitController(ConnectionFactory connectionFactory) {
+        this.rabbitTemplate = new RabbitTemplate(connectionFactory);
+        this.template = new RestTemplate();
+        this.address = "http://driverserver:8086/personnel/";
+
+    }
 
     @PostMapping
     public ResponseEntity<Object> add(@RequestParam String name, @RequestParam Category category,
@@ -35,7 +45,7 @@ public class PersonnelRestController {
 
         CreateInfo info = new CreateInfo(name, category, salary, mileage);
         String request = new Gson().toJson(info);
-        Object response = rabbitTemplate.convertSendAndReceive("exchange", RabbitConfiguration.Driver_Key_Create, request);
+        Object response = rabbitTemplate.convertSendAndReceive(RabbitConfiguration.EXCHANGE, RabbitConfiguration.Driver_Key_Create, request);
         assert response != null;
         return ResponseEntity.ok(response);
     }
@@ -63,7 +73,7 @@ public class PersonnelRestController {
 
         DeleteInfo info = new DeleteInfo(name, status, module);
         String request = new Gson().toJson(info);
-        Object response = rabbitTemplate.convertSendAndReceive("exchange", RabbitConfiguration.Driver_Key_Delete, request);
+        Object response = rabbitTemplate.convertSendAndReceive(RabbitConfiguration.EXCHANGE, RabbitConfiguration.Driver_Key_Delete, request);
         assert response != null;
         return ResponseEntity.ok(response);
 

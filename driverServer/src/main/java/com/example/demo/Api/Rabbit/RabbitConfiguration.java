@@ -10,6 +10,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class RabbitConfiguration {
 
+    public static final String Exchange = "exchange";
     public static final String Driver_Key_Delete = "driverDelete_routingKey";
     public static final String Driver_Key_Create = "driverCreate_routingKey";
     public static final String Driver_Key_Update = "driverUpdate_routingKey";
@@ -33,7 +34,7 @@ public class RabbitConfiguration {
 
     @Bean
     public TopicExchange exchange() {
-        return new TopicExchange("exchange");
+        return new TopicExchange(Exchange);
     }
 
     @Bean

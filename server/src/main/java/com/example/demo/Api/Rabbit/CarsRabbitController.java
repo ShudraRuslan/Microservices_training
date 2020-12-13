@@ -6,7 +6,9 @@ import com.example.demo.Api.Rabbit.carDto.DeleteInfo;
 import com.example.demo.Api.Rest.MappingModule;
 import com.example.demo.Services.MainClasses.CarInfo.CarStatus;
 import com.google.gson.Gson;
+import org.springframework.amqp.rabbit.connection.ConnectionFactory;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
@@ -20,12 +22,20 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping(value = "/cars/rabbit")
-public class CarsRestController {
+public class CarsRabbitController {
 
 
-    private final RestTemplate template = new RestTemplate();
-    private final String address = "http://carserver:8083/cars/";
-    private final RabbitTemplate rabbitTemplate = new RabbitTemplate();
+    private final RestTemplate template;
+    private final String address;
+    private final RabbitTemplate rabbitTemplate;
+
+    @Autowired
+    public CarsRabbitController(ConnectionFactory connectionFactory) {
+        this.rabbitTemplate = new RabbitTemplate(connectionFactory);
+        this.address = "http://carserver:8083/cars/";
+        this.template = new RestTemplate();
+
+    }
 
     @PostMapping
     public ResponseEntity<Object> add(@RequestParam String name, @RequestParam double enginePower,
@@ -34,7 +44,7 @@ public class CarsRestController {
 
         CreateInfo info = new CreateInfo(name, enginePower, capacity, fuelConsumption, mileage);
         String request = new Gson().toJson(info);
-        Object response = rabbitTemplate.convertSendAndReceive("exchange", RabbitConfiguration.Car_Key_Create, request);
+        Object response = rabbitTemplate.convertSendAndReceive(RabbitConfiguration.EXCHANGE, RabbitConfiguration.Car_Key_Create, request);
         return ResponseEntity.ok(Objects.requireNonNull(response));
     }
 
@@ -58,8 +68,8 @@ public class CarsRestController {
 
         DeleteInfo info = new DeleteInfo(name, status, module);
         String request = new Gson().toJson(info);
-        Object response = rabbitTemplate.convertSendAndReceive("exchange", RabbitConfiguration.Car_Key_Delete, request);
-        return ResponseEntity.ok(response);
+        Object response = rabbitTemplate.convertSendAndReceive(RabbitConfiguration.EXCHANGE, RabbitConfiguration.Car_Key_Delete, request);
+        return ResponseEntity.ok(Objects.requireNonNull(response));
     }
 
 
